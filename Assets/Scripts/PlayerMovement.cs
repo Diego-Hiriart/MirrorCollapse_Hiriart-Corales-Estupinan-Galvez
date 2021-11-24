@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
+    [SerializeField] bool canJump = false;
+
     [SerializeField] float speed = 6f;
     float originalSpeed;
     float sprintTime;
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     void HandleJump()
     {
         // Comment the if statement if you don't want to allow jumping
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump") && isGrounded && canJump)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
         }
