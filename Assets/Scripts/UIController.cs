@@ -31,4 +31,14 @@ public class UIController : MonoBehaviour
     {
         this.inventory.SetActive(status);
     }
+
+    public bool IsPauseActive()
+    {
+        return this.pause.activeSelf;
+    }
+
+    public bool IsInventoryActive()
+    {
+        return this.inventory.activeSelf;
+    }
 }
