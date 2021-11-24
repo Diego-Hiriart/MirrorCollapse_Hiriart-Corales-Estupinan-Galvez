@@ -11,10 +11,7 @@ public class SaveData
     private List<ItemList> items;
     private List<EnemyList> enemies;
 
-    public SaveData()
-    {
-
-    }
+    public SaveData(){}
 
     public SaveData(PlayerCharacter player, List<ItemList> itemlists, List<EnemyList> enemyLists)
     {
@@ -28,5 +25,7 @@ public class SaveData
             this.enemies.Add(list);
         }
     }
+
+
 }
 

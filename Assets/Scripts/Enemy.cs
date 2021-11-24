@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 [Serializable]
 public class Enemy : Character
 {
-
+    
 }
 

@@ -9,6 +9,7 @@ public class Item
 {
     private bool weaponAmmo;
     private string name;
+    private bool isPickable;
 
 }
 

@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private UIController UI;
     [SerializeField]
+    private Canvas hud;
+    [SerializeField]
     private PlayerController player;
     [SerializeField]
     private AudioMixer effectsMixer;
@@ -62,6 +64,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
         else
         {
@@ -71,6 +74,7 @@ public class GameController : MonoBehaviour
             }          
             Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseMenuState(false);
+            this.hud.gameObject.SetActive(true);
         }
         
     }
@@ -82,12 +86,14 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseInventoryMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
         else if(!this.UI.IsPauseActive())
         {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseInventoryMenuState(false);
+            this.hud.gameObject.SetActive(true);
         }        
     }
 }
