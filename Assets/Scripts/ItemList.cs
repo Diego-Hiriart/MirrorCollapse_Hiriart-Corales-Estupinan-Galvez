@@ -10,13 +10,13 @@ public class ItemList
     private int level;
     private List<Item> items = new List<Item>();
 
-    public void AddItem(Item item, string newId)
+    public void AddItem(Item item)
     {
         foreach (Item listItem in this.items)
         {
             if (listItem.GetName().Equals(item.GetName()))
             {
-                listItem.AddOne(newId);
+                listItem.AddOne(item.GetName());
                 return;
             }
         }

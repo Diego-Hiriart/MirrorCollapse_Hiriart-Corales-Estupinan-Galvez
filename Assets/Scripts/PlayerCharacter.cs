@@ -9,6 +9,8 @@ using UnityEngine;
 public class PlayerCharacter : Character
 {
     private ItemList inventory = new ItemList();
+    private float minHealth = 0;
+    private float maxHealth = 100;
 
     public PlayerCharacter() {}
 
@@ -29,10 +31,19 @@ public class PlayerCharacter : Character
         return this.inventory;
     }
 
-    public void AddToInventory(Item item, string newID)
+    public void AddToInventory(Item item)
     {
-        this.inventory.AddItem(item, newID);
+        this.inventory.AddItem(item);
     }
-    
+
+    public float GetMinHealth()
+    {
+        return this.minHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return this.maxHealth;
+    }
 }
 

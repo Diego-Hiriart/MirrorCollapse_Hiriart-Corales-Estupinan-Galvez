@@ -19,7 +19,14 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        if (!PrefsKeys.newGame)
+        {
+            LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        }
+        else
+        {
+            NewGame();
+        }      
     }
 
     // Update is called once per frame
@@ -28,9 +35,9 @@ public class LevelController : MonoBehaviour
         
     }
 
-    public void AddItem(Item item, string newID)
+    public void AddItem(Item item)
     {
-        this.levelItems.AddItem(item, newID);
+        this.levelItems.AddItem(item);
     }
 
     public void SaveGame()
@@ -69,23 +76,28 @@ public class LevelController : MonoBehaviour
                     }
 
                 }                
-            }
-
-            
+            }      
             List<float> pos = save.GetPlayer().GetTransform().GetPosition();
             List<float> rot = save.GetPlayer().GetTransform().GetRotation();
-            this.player = Instantiate(player, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
+            this.player = Instantiate(playerPrefab, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
             this.playerControl = this.player.GetComponent<PlayerController>();
             this.playerControl.GetPlayerInfo().SetHealth(save.GetPlayer().GetHealth());
         }
         else
         {
-            Instantiate(player, new Vector3(-30, 3.25f, -45), new Quaternion(0,0,0,0));
+            this.player = Instantiate(playerPrefab, new Vector3(-30, 3.25f, -45), new Quaternion(0,0,0,0));
         }
     }
 
-    public void AddToPlayerInventory(Item item, string newID)
+    private void NewGame()
     {
-        this.playerControl.GetPlayerInfo().AddToInventory(item, newID);
+        this.player = Instantiate(playerPrefab, new Vector3(-30, 3.25f, -45), new Quaternion(0, 0, 0, 0));
+        this.playerControl = this.player.GetComponent<PlayerController>();
+    }
+
+    public void AddToPlayerInventory(Item item)
+    {
+        
+        this.playerControl.GetPlayerInfo().AddToInventory(item);
     }
 }

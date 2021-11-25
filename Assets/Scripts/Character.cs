@@ -10,8 +10,6 @@ public class Character
 {
     protected SaveTransform characterTransform;
     protected float characterHealth;
-    protected float minHealth = 0;
-    protected float maxHeatth = 100;
 
     public Character() { }
 
