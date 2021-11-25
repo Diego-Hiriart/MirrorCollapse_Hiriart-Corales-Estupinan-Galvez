@@ -2136,7 +2136,7 @@ MonoBehaviour:
   musicVolume: {fileID: 7057417952210909569}
   saveSettings: {fileID: 8520537389536142462}
   closeButton: {fileID: 4689022824280316752}
-  effectsMixer: {fileID: 24100000, guid: e99b0c0ab7b401344a9810e6a5eb89c0, type: 2}
+  effectsMixer: {fileID: 24100000, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
   musicMixer: {fileID: 24100000, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
 --- !u!1 &8520537390540567296
 GameObject:

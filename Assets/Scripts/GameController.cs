@@ -46,14 +46,19 @@ public class GameController : MonoBehaviour
         if (PlayerPrefs.HasKey(PrefsKeys.masterVolKey))
         {
             AudioListener.volume = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);
+            Debug.Log(AudioListener.volume);
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey));
+            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey));
+            effectsMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
             musicMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.musicVolKey));
+            musicMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
         }
     }
 

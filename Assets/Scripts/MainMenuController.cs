@@ -28,9 +28,9 @@ public class MainMenuController : MonoBehaviour
         LoadApplySettings();
         this.SetSettingsMenuState(false);
         this.newGame.onClick.AddListener(delegate { CreateNewGame(); } );
-        this.loadGame.onClick.AddListener(delegate { ; });
+        this.loadGame.onClick.AddListener(delegate { LoadLastGame(); });
         this.settingsButton.onClick.AddListener(delegate { OpenSettings(); });
-        this.quitGame.onClick.AddListener(delegate { ; });
+        this.quitGame.onClick.AddListener(delegate { Quit(); });
     }
 
     // Start is called before the first frame update
@@ -51,9 +51,9 @@ public class MainMenuController : MonoBehaviour
         {
             AudioListener.volume = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey));
+            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey));
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
@@ -69,6 +69,11 @@ public class MainMenuController : MonoBehaviour
     private void CreateNewGame()
     {
         SceneManager.LoadScene("PartOne");
+    }
+
+    private void LoadLastGame()
+    {
+
     }
 
     private void OpenSettings()
