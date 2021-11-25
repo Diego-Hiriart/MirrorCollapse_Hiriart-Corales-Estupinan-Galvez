@@ -8,33 +8,35 @@ using UnityEngine;
 [Serializable]
 public class Character
 {
-    protected Transform characterTransform;
+    protected SaveTransform characterTransform;
     protected float characterHealth;
+    protected float minHealth = 0;
+    protected float maxHeatth = 100;
 
     public Character() { }
 
-    public Character(Transform transf, float health)
+    public Character(SaveTransform transf, float health)
     {
         this.characterTransform = transf;
         this.characterHealth = health;
     }
 
-    protected void SetTransform(Transform transf)
+    public void SetTransform(SaveTransform transf)
     {
         this.characterTransform = transf;
     }
 
-    protected Transform GetTransform()
+    public SaveTransform GetTransform()
     {
         return this.characterTransform;
     }
 
-    protected void SetHealth(float value)
+    public void SetHealth(float value)
     {
         this.characterHealth = value;
     }
 
-    protected float GetHealth()
+    public float GetHealth()
     {
         return this.characterHealth;
     }
