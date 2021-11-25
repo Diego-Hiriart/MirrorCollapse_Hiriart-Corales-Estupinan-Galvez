@@ -70,6 +70,7 @@ public class MainMenuController : MonoBehaviour
 
     private void CreateNewGame()
     {
+        PrefsKeys.newGame = true;
         SceneManager.LoadScene("PartOne");      
     }
 
