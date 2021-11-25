@@ -469,7 +469,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8207474685216331008, guid: 1b958753b8d1ba049a6f96bfb53920d3, type: 3}
       propertyPath: m_Name
-      value: house
+      value: House
       objectReference: {fileID: 0}
     - target: {fileID: 8839754702530072506, guid: 1b958753b8d1ba049a6f96bfb53920d3, type: 3}
       propertyPath: m_RootOrder

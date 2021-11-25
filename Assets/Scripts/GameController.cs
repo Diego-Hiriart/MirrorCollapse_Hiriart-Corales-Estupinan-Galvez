@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private UIController UI;
     [SerializeField]
+    private Canvas hud;
+    [SerializeField]
     private PlayerController player;
     [SerializeField]
     private AudioMixer effectsMixer;
@@ -44,14 +46,19 @@ public class GameController : MonoBehaviour
         if (PlayerPrefs.HasKey(PrefsKeys.masterVolKey))
         {
             AudioListener.volume = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);
+            Debug.Log(AudioListener.volume);
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey));
+            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey));
+            effectsMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
             musicMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.musicVolKey));
+            musicMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
         }
     }
 
@@ -62,6 +69,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
         else
         {
@@ -71,6 +79,7 @@ public class GameController : MonoBehaviour
             }          
             Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseMenuState(false);
+            this.hud.gameObject.SetActive(true);
         }
         
     }
@@ -82,12 +91,14 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseInventoryMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
         else if(!this.UI.IsPauseActive())
         {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseInventoryMenuState(false);
+            this.hud.gameObject.SetActive(true);
         }        
     }
 }

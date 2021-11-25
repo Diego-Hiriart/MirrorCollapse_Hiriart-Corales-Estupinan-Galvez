@@ -49,9 +49,9 @@ public class SettingsController : MonoBehaviour
         {
             this.masterVolume.value = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);         
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            this.effectsVolume.value = PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey);          
+            this.effectsVolume.value = PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey);          
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
@@ -77,7 +77,7 @@ public class SettingsController : MonoBehaviour
     private void SafePreferences()
     {
         PlayerPrefs.SetFloat(PrefsKeys.masterVolKey, masterVolume.value);
-        PlayerPrefs.SetFloat(PrefsKeys.effectsVolumeKey, effectsVolume.value);
+        PlayerPrefs.SetFloat(PrefsKeys.effectsVolKey, effectsVolume.value);
         PlayerPrefs.SetFloat(PrefsKeys.musicVolKey, musicVolume.value);
         PlayerPrefs.Save();
         this.gameObject.SetActive(false);
