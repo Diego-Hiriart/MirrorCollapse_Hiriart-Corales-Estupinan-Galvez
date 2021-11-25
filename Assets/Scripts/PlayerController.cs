@@ -13,7 +13,12 @@ public class PlayerController : MonoBehaviour
         Quaternion playerRot = this.transform.rotation;
         SaveTransform playerTransform = new SaveTransform(playerPos.x, playerPos.y, playerPos.z, 
             playerRot.x, playerRot.y, playerRot.z, playerRot.w);
-        this.player = new PlayerCharacter(playerTransform, 100, new ItemList());
+        this.player = new PlayerCharacter(playerTransform, new PlayerCharacter().GetMaxHealth(), new ItemList());
+    }
+
+    private void Start()
+    {
+        Debug.Log(this.player.GetItems().Count);
     }
 
     // Update is called once per frame

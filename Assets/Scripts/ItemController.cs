@@ -30,10 +30,10 @@ public class ItemController : MonoBehaviour
 
     public void PickItemUp()
     {
-        StartCoroutine(PlayAudio());
+        StartCoroutine(PlayAudio());       
         if (this.item.IsPickable())
-        {
-            level.AddToPlayerInventory(this.item, this.itemID);
+        {           
+            level.AddToPlayerInventory(this.item);
         }
     }
 
