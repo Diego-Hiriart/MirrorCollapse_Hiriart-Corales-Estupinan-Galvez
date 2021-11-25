@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -27,10 +29,10 @@ public class MainMenuController : MonoBehaviour
     {
         LoadApplySettings();
         this.SetSettingsMenuState(false);
-        this.newGame.onClick.AddListener(delegate { CreateNewGame(); } );
-        this.loadGame.onClick.AddListener(delegate { LoadLastGame(); });
-        this.settingsButton.onClick.AddListener(delegate { OpenSettings(); });
-        this.quitGame.onClick.AddListener(delegate { Quit(); });
+        this.newGame.onClick.AddListener(CreateNewGame);
+        this.loadGame.onClick.AddListener(LoadLastGame);
+        this.settingsButton.onClick.AddListener(OpenSettings);
+        this.quitGame.onClick.AddListener(Quit);
     }
 
     // Start is called before the first frame update
@@ -68,12 +70,19 @@ public class MainMenuController : MonoBehaviour
 
     private void CreateNewGame()
     {
-        SceneManager.LoadScene("PartOne");
+        SceneManager.LoadScene("PartOne");      
     }
 
     private void LoadLastGame()
     {
-
+        string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fs = File.Open(filePath, FileMode.Open);
+            SaveData save = (SaveData)bf.Deserialize(fs);
+            SceneManager.LoadScene(save.GetLevel());          
+        }
     }
 
     private void OpenSettings()

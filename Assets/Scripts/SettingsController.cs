@@ -27,8 +27,8 @@ public class SettingsController : MonoBehaviour
         this.masterVolume.onValueChanged.AddListener(delegate { MasterVolume(); });
         this.effectsVolume.onValueChanged.AddListener(delegate { FXVolume(); });
         this.musicVolume.onValueChanged.AddListener(delegate { MusicVolume(); });
-        this.saveSettings.onClick.AddListener(delegate { SafePreferences(); });
-        this.closeButton.onClick.AddListener(delegate { CloseSettings(); });
+        this.saveSettings.onClick.AddListener(SafePreferences);
+        this.closeButton.onClick.AddListener(CloseSettings);
     }
 
     // Start is called before the first frame update

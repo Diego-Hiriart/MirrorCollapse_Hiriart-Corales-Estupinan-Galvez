@@ -8,24 +8,33 @@ using System.Threading.Tasks;
 public class SaveData
 {
     private PlayerCharacter player;
-    private List<ItemList> items;
-    private List<EnemyList> enemies;
+    private ItemList items = new ItemList();
+    private List<EnemyList> enemies = new List<EnemyList>();
+    private string level;
 
     public SaveData(){}
 
-    public SaveData(PlayerCharacter player, List<ItemList> itemlists, List<EnemyList> enemyLists)
+    public SaveData(string level, PlayerCharacter player, ItemList itemlists, EnemyList enemyLists)
     {
+        this.level = level;
         this.player = player;
-        foreach (ItemList list in itemlists)
-        {
-            this.items.Add(list);
-        }
-        foreach (EnemyList list in enemyLists)
-        {
-            this.enemies.Add(list);
-        }
+        this.items = itemlists;
+        this.enemies.Add(enemyLists);
     }
 
+    public PlayerCharacter GetPlayer()
+    {
+        return this.player;
+    }
 
+    public List<Item> GetPlayerInventory()
+    {
+        return this.player.GetInventory().GetItems();
+    }
+
+    public string GetLevel()
+    {
+        return this.level;
+    }
 }
 

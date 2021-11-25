@@ -12,13 +12,15 @@ public class PauseController : MonoBehaviour
     private GameObject settingsMenu;
     [SerializeField]
     private Button toMainMenu;
+    [SerializeField]
+    private LevelController currentLevel;
 
 
     private void Awake()
     {
         this.SetSettingsMenuState(false);
-        this.settingsButton.onClick.AddListener(delegate { OpenSettings(); });
-        this.toMainMenu.onClick.AddListener(delegate { QuitToMainMenu(); });
+        this.settingsButton.onClick.AddListener(OpenSettings);
+        this.toMainMenu.onClick.AddListener(QuitToMainMenu);
     }
 
     // Start is called before the first frame update
@@ -46,6 +48,6 @@ public class PauseController : MonoBehaviour
 
     private void QuitToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");        
     }
 }
