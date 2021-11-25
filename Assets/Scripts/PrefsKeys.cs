@@ -10,4 +10,5 @@ public static class PrefsKeys
     public const string effectsVolKey = "effects_volume";
     public const string musicVolKey = "music_volume";
     public const string saveFileFormat = "/MirrorCollapseSaveFile";
+    public static bool newGame = true;
 }
