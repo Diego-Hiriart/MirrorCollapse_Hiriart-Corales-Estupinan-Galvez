@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
+    private Item item;
+    [SerializeField]
+    private bool isPickable;
+    [SerializeField]
+    private bool isWeaponAmmo;
+    [SerializeField]
+    private string itemName;
+    private LevelController level;
+    [SerializeField]
+    private string itemID;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.item = new Item(isWeaponAmmo, itemName, isPickable);
+        this.level = GetComponentInParent<LevelController>();
     }
 
     // Update is called once per frame
@@ -16,9 +28,13 @@ public class ItemController : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void PickItemUp()
     {
-        StartCoroutine(PlayAudio());      
+        StartCoroutine(PlayAudio());
+        if (this.item.IsPickable())
+        {
+            level.AddToPlayerInventory(this.item, this.itemID);
+        }
     }
 
     private IEnumerator PlayAudio()
@@ -30,5 +46,10 @@ public class ItemController : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
+    }
+
+    public Item GetItem()
+    {
+        return this.item;
     }
 }

@@ -9,7 +9,40 @@ public class Item
 {
     private bool weaponAmmo;
     private string name;
-    private bool isPickable;
+    private bool pickable;
+    private List<string> ids;//Name+level int + item instance, example: Donut11
+    private bool health;
 
+    public Item(bool isWeaponAmmo, string name, bool isPickable)
+    {
+        this.weaponAmmo = isWeaponAmmo;
+        this.name = name;
+        this.pickable = isPickable;
+    }
+
+    public string GetName()
+    {
+        return this.name;
+    }
+
+    public List<string> GetIds()
+    {
+        return this.ids;
+    }
+
+    public bool IsWeaponAmmo()
+    {
+        return this.weaponAmmo;
+    }
+
+    public bool IsPickable()
+    {
+        return this.pickable;
+    }
+
+    public void AddOne(string newID)
+    {
+        this.ids.Add(newID);
+    }
 }
 
