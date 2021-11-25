@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    CharacterController controller;
 
     [SerializeField] bool canJump = false;
 
@@ -15,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     bool isSprinting = false;
     [SerializeField] float sprintLimitTime = 3f;
     [SerializeField] float sprintMultiplier = 1.25f;
+
+    Vector3 originalCenter;
+    float originalHeight;
+    bool isCrouching = false;
+    bool comingUp = false;
 
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float jumpHeight = 3f;
@@ -28,17 +33,24 @@ public class PlayerMovement : MonoBehaviour
     
     void Start() 
     {
-        // Store the original speed value
+        controller = GetComponent<CharacterController>();   
+
+        // Store the original values
         originalSpeed = speed;
+        transform.tag = "Player";
+        originalCenter = controller.center;
+        originalHeight = controller.height;
     }
 
     void Update()
     {
         HandleMove();
         HandleJump();
-        HandleSprint();    
+        HandleSprint();
+        HandleCrouch();  
     }
 
+    // Allows the player to move while using the WASD or Arrow keys
     void HandleMove()
     {
         // Checks if the player is touching the ground
@@ -73,27 +85,64 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    // Allows player to crouch while pressing the left control button
+    void HandleCrouch()
+    {
+        // When pressing down the button, the player changes its height to
+        // a lower one and lose speed
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            controller.height = 1f;
+            controller.center = new Vector3(0f, -0.5f, 0f);
+            speed /= 2;
+            isCrouching = true;
+        }
+
+        // When the key is no longer pressed, then the player is
+        // standing up again
+        if(Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            comingUp = true;
+        }
+
+        // Smoothly stand up again if the player is no longer crouching
+        if(comingUp)
+        {
+            controller.center = originalCenter;
+            controller.height += 0.05f;
+            controller.height = Mathf.Clamp(controller.height, 1f, originalHeight);
+            speed = originalSpeed;
+        }
+
+        // When the player completely stands up, the isCrouching is false
+        if(controller.height == originalHeight)
+        {
+            comingUp = false;
+            isCrouching = false;
+        }
+    }
+
     // Allows player to sprint for an amount of time while using the left shift key
     void HandleSprint()
     {
         // While the key is pressed and the player is grounded, add seconds to
         // the sprintTime value
-        if (Input.GetKey(KeyCode.LeftShift) && isGrounded) 
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded && !isCrouching) 
         {
             sprintTime += 1 / (1 / Time.deltaTime);
         }
 
         // When pressing down the key, add the sprintMultiplier value to the current speed
         // and change the state of the player to isSprinting
-        if (Input.GetKeyDown(KeyCode.LeftShift) && sprintTime <= sprintLimitTime && isGrounded) 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && sprintTime <= sprintLimitTime && isGrounded && !isCrouching) 
         {
-            speed = originalSpeed * sprintMultiplier;
+            speed *= sprintMultiplier;
             isSprinting = true;
         }
 
         // When the key is no longer pressed or the sprintTime reached the limit, change the
         // speed to the original value and change isSprinting to false
-        if (Input.GetKeyUp(KeyCode.LeftShift) || sprintTime > sprintLimitTime && isGrounded) 
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching || sprintTime > sprintLimitTime && isGrounded) 
         {
             speed = originalSpeed;
             isSprinting = false;
