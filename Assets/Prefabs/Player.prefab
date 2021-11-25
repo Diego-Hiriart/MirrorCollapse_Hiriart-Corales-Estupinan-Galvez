@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 7190831291143750407}
   - component: {fileID: 7190831291143750458}
   - component: {fileID: 7190831291143750404}
+  - component: {fileID: 1400148749}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7190831291143750458}
+  canJump: 0
   speed: 6
   sprintLimitTime: 3
   sprintMultiplier: 1.75
@@ -201,6 +203,19 @@ MonoBehaviour:
   groundmask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1400148749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190831291143750403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22751521a14af304d8c8615b4e8d0ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 7190831291341379435}
 --- !u!1 &7190831291341379433
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,8 +92,8 @@ public class PlayerMovement : MonoBehaviour
         // a lower one and lose speed
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
-            controller.height = 1f;
-            controller.center = new Vector3(0f, -0.5f, 0f);
+            controller.height = 0.5f;
+            controller.center = new Vector3(0f, (-0.5f/2), 0f);
             speed /= 2;
             isCrouching = true;
         }
