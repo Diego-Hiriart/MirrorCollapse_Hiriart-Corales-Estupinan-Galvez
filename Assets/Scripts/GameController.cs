@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField]
     private UIController UI;
     [SerializeField]
+    private Canvas hud;
+    [SerializeField]
     private PlayerController player;
-    
+    [SerializeField]
+    private AudioMixer effectsMixer;
+    [SerializeField]
+    private AudioMixer musicMixer;
+
+    private void Awake()
+    {
+        LoadApplySettings();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,44 +30,75 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            this.OpenPauseMenu();
+            this.OpenClosePauseMenu();
         }
 
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            this.OpenInventory();
+            this.OpenCloseInventory();
         }
     }
 
-    private void OpenPauseMenu()
+    private void LoadApplySettings()
     {
-        if (Time.timeScale == 1)
+        if (PlayerPrefs.HasKey(PrefsKeys.masterVolKey))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);
+            Debug.Log(AudioListener.volume);
+        }
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
+        {
+            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey));
+            effectsMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
+        }
+        if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
+        {
+            musicMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.musicVolKey));
+            musicMixer.GetFloat("Volume", out float value);
+            Debug.Log(value);
+        }
+    }
+
+    private void OpenClosePauseMenu()
+    {
+        if (!this.UI.IsPauseActive())
         {
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
         else
         {
-            Time.timeScale = 1;
+            if (!this.UI.IsInventoryActive())
+            {
+                Time.timeScale = 1;
+            }          
+            Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseMenuState(false);
+            this.hud.gameObject.SetActive(true);
         }
         
     }
 
-    private void OpenInventory()
+    private void OpenCloseInventory()
     {
-        if (Time.timeScale == 1)
+        if (!this.UI.IsPauseActive() && !this.UI.IsInventoryActive())
         {
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
             this.UI.SetPauseInventoryMenuState(true);
+            this.hud.gameObject.SetActive(false);
         }
-        else
+        else if(!this.UI.IsPauseActive())
         {
             Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
             this.UI.SetPauseInventoryMenuState(false);
-        }
-        
+            this.hud.gameObject.SetActive(true);
+        }        
     }
 }
