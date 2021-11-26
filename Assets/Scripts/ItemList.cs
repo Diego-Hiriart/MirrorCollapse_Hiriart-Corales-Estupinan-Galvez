@@ -10,13 +10,21 @@ public class ItemList
     private int level;
     private List<Item> items = new List<Item>();
 
-    public void AddItem(Item item, string newId)
+    public void AddItem(Item item)
     {
         foreach (Item listItem in this.items)
         {
             if (listItem.GetName().Equals(item.GetName()))
             {
-                listItem.AddOne(newId);
+                List<string> toAdd = new List<string>();
+                foreach (string id in item.GetIds())//There will always be only one if something is being picked up, but still better safe than sorry
+                {
+                    toAdd.Add(id);                 
+                }
+                foreach (string id in toAdd)
+                {
+                    listItem.AddOne(id);
+                }
                 return;
             }
         }

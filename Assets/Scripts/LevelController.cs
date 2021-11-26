@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
     private GameObject playerPrefab;
     private GameObject player;
     private PlayerController playerControl;
-    private ItemList levelItems = new ItemList();
+    private List<ItemController> levelItems = new List<ItemController>();
     private EnemyList levelEnemies = new EnemyList();
     [SerializeField]
     private string level;
@@ -19,7 +19,14 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        if (!PrefsKeys.newGame)
+        {
+            LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        }
+        else
+        {
+            NewGame();
+        }      
     }
 
     // Update is called once per frame
@@ -28,9 +35,9 @@ public class LevelController : MonoBehaviour
         
     }
 
-    public void AddItem(Item item, string newID)
+    public void AddItem(ItemController item)
     {
-        this.levelItems.AddItem(item, newID);
+        this.levelItems.Add(item);
     }
 
     public void SaveGame()
@@ -59,33 +66,47 @@ public class LevelController : MonoBehaviour
             FileStream fs = File.Open(filePath, FileMode.Open);
             SaveData save = (SaveData)bf.Deserialize(fs);
 
-            foreach (Item levelItem in this.levelItems.GetItems())
+            List<ItemController> toBeDeleted = new List<ItemController>();
+            foreach (ItemController levelItem in this.levelItems)
             {
                 foreach (Item playerItem in save.GetPlayerInventory())
                 {
                     foreach (string id in playerItem.GetIds())
                     {
-
+                        if (levelItem.GetItemID().Equals(id))
+                        {
+                            toBeDeleted.Add(levelItem);
+                        }
                     }
 
-                }                
+                }
             }
-
-            
+            foreach (ItemController item in toBeDeleted)
+            {
+                Destroy(item.gameObject);
+            }
             List<float> pos = save.GetPlayer().GetTransform().GetPosition();
             List<float> rot = save.GetPlayer().GetTransform().GetRotation();
-            this.player = Instantiate(player, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
+            this.player = Instantiate(playerPrefab, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
             this.playerControl = this.player.GetComponent<PlayerController>();
+            this.playerControl.GetPlayerInfo().SetInventory(save.GetPlayer().GetInventory());
             this.playerControl.GetPlayerInfo().SetHealth(save.GetPlayer().GetHealth());
         }
         else
         {
-            Instantiate(player, new Vector3(-30, 3.25f, -45), new Quaternion(0,0,0,0));
+            this.player = Instantiate(playerPrefab, new Vector3(-30, 3f, -45), new Quaternion(0,0,0,0));
         }
     }
 
-    public void AddToPlayerInventory(Item item, string newID)
+    private void NewGame()
     {
-        this.playerControl.GetPlayerInfo().AddToInventory(item, newID);
+        this.player = Instantiate(playerPrefab, new Vector3(-30, 3.25f, -45), new Quaternion(0, 0, 0, 0));
+        this.playerControl = this.player.GetComponent<PlayerController>();
+    }
+
+    public void AddToPlayerInventory(Item item)
+    {
+        
+        this.playerControl.GetPlayerInfo().AddToInventory(item);
     }
 }

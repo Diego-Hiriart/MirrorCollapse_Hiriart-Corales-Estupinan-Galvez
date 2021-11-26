@@ -18,8 +18,9 @@ public class ItemController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.item = new Item(isWeaponAmmo, itemName, isPickable);
+        this.item = new Item(isWeaponAmmo, itemName, isPickable, this.itemID);
         this.level = GetComponentInParent<LevelController>();
+        this.AddThisToLevel();
     }
 
     // Update is called once per frame
@@ -28,12 +29,17 @@ public class ItemController : MonoBehaviour
         
     }
 
+    private void AddThisToLevel()
+    {
+        this.level.AddItem(this);
+    }
+
     public void PickItemUp()
     {
-        StartCoroutine(PlayAudio());
+        StartCoroutine(PlayAudio());       
         if (this.item.IsPickable())
-        {
-            level.AddToPlayerInventory(this.item, this.itemID);
+        {                     
+            level.AddToPlayerInventory(this.item);
         }
     }
 
@@ -51,5 +57,10 @@ public class ItemController : MonoBehaviour
     public Item GetItem()
     {
         return this.item;
+    }
+
+    public string GetItemID()
+    {
+        return this.itemID;
     }
 }

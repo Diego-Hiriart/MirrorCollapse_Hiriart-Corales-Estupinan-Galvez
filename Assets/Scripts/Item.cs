@@ -10,7 +10,7 @@ public class Item
     private bool weaponAmmo;
     private string name;
     private bool pickable;
-    private List<string> ids;//Name+level int + item instance, example: Donut11
+    private List<string> ids = new List<String>();//Name+level int + item instance, example: Donut11
     private bool health;
 
     public Item(bool isWeaponAmmo, string name, bool isPickable)
@@ -18,6 +18,11 @@ public class Item
         this.weaponAmmo = isWeaponAmmo;
         this.name = name;
         this.pickable = isPickable;
+    }
+
+    public Item(bool isWeaponAmmo, string name, bool isPickable, string itemID) : this(isWeaponAmmo, name, isPickable)
+    {
+        this.ids.Add(itemID);
     }
 
     public string GetName()
