@@ -16,7 +16,15 @@ public class ItemList
         {
             if (listItem.GetName().Equals(item.GetName()))
             {
-                listItem.AddOne(item.GetName());
+                List<string> toAdd = new List<string>();
+                foreach (string id in item.GetIds())//There will always be only one if something is being picked up, but still better safe than sorry
+                {
+                    toAdd.Add(id);                 
+                }
+                foreach (string id in toAdd)
+                {
+                    listItem.AddOne(id);
+                }
                 return;
             }
         }

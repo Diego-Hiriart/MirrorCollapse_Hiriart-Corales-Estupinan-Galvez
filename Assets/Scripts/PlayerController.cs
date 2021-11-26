@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerCharacter player;
+    private bool interactingWithItem = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -16,17 +17,13 @@ public class PlayerController : MonoBehaviour
         this.player = new PlayerCharacter(playerTransform, new PlayerCharacter().GetMaxHealth(), new ItemList());
     }
 
-    private void Start()
-    {
-        Debug.Log(this.player.GetItems().Count);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))//If a E is pressed
+        if (Input.GetKeyDown(KeyCode.E))//If E is pressed
         {
-            if (Time.timeScale == 1) {
+            if (Time.timeScale == 1 && !this.interactingWithItem) {
+                this.interactingWithItem = true;
                 ObjectInteract();
             }
         }
@@ -59,5 +56,6 @@ public class PlayerController : MonoBehaviour
                 saveMirror.SaveGame();
             }
         }
+        this.interactingWithItem = false;
     }
 }
