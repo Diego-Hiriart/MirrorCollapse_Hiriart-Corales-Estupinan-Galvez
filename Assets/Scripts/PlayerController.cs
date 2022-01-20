@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit impact;//To store what the ray hit       
-        if (Physics.Raycast(raycast, out impact, 2f))
+        if (Physics.Raycast(raycast, out impact, 3f))
         {          
             ItemController item;
             SavingController saveMirror;
@@ -54,9 +54,14 @@ public class PlayerController : MonoBehaviour
                 {
                     item.PickItemUp();
                 }
-            }else if (impact.collider.TryGetComponent<SavingController>(out saveMirror))
+            }
+            else if (impact.collider.TryGetComponent<SavingController>(out saveMirror))
             {
                 saveMirror.SaveGame();
+            }
+            else if (impact.collider.tag == "Door")
+            {
+                impact.transform.gameObject.GetComponentInParent<DoorInteractable>().OpenCloseDoor();
             }
         }
     }
