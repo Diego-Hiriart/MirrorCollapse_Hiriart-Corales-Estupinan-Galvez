@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
             {
                 impact.transform.gameObject.GetComponentInParent<DoorInteractable>().OpenCloseDoor();
             }
+            else if (impact.collider.tag == "Switch")
+            {
+                impact.transform.GetComponent<LightSwitch>().TurnOnOffLights();
+            }
         }
     }
 }

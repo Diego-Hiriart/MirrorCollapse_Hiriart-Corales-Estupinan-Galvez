@@ -7,6 +7,8 @@ TagManager:
   - Lamp
   - Snack
   - Door
+  - Switch
+  - Portal
   layers:
   - Default
   - TransparentFX
