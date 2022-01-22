@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) 
+    void OnTriggerExit(Collider other) 
     {
         if(other.tag == "Player")
         {

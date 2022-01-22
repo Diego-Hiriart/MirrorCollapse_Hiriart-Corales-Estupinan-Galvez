@@ -7,7 +7,6 @@ public class DoorInteractable : MonoBehaviour
     [SerializeField] GameObject doorPivot;
     Transform closedPos;
     Transform openPos;
-    [SerializeField] bool isOpen = false;
 
     Animator animator;
 

@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerCharacter player;
+    private float health;
+
+    float maxHealth;
+    float minHealth;
     
     // Start is called before the first frame update
     void Awake()
@@ -14,6 +18,10 @@ public class PlayerController : MonoBehaviour
         SaveTransform playerTransform = new SaveTransform(playerPos.x, playerPos.y, playerPos.z, 
             playerRot.x, playerRot.y, playerRot.z, playerRot.w);
         this.player = new PlayerCharacter(playerTransform, new PlayerCharacter().GetMaxHealth(), new ItemList());
+
+        maxHealth = player.GetMaxHealth();
+        minHealth = player.GetMinHealth();
+        health = maxHealth;
     }
 
     private void Start()
@@ -30,6 +38,22 @@ public class PlayerController : MonoBehaviour
                 ObjectInteract();
             }
         }
+    }
+
+    public void ChangeHealth(float health, bool add)
+    {
+        
+
+        if(add)
+        {
+            this.health = this.health + health < maxHealth ? this.health + health : maxHealth;
+        }
+        else
+        {
+            this.health = this.health - health > minHealth ? this.health - health : minHealth;
+        }
+
+        Debug.Log("Health: " + this.health);
     }
 
     public PlayerCharacter GetPlayerInfo()
