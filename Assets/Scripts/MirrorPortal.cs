@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MirrorPortal : MonoBehaviour
 {
+    [SerializeField] bool isSecond;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,10 @@ public class MirrorPortal : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 2 && isSecond)
+        {
+            SceneManager.LoadScene(3);
         }
     }
 }
