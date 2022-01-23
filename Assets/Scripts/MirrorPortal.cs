@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MirrorPortal : MonoBehaviour
 {
@@ -14,5 +15,13 @@ public class MirrorPortal : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangeLevel()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }

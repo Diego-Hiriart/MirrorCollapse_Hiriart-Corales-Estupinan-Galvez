@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
             {
                 impact.transform.GetComponent<LightSwitch>().TurnOnOffLights();
             }
+            else if(impact.collider.tag == "Portal")
+            {
+                impact.transform.GetComponentInParent<MirrorPortal>().ChangeLevel();
+            }
         }
     }
 }
