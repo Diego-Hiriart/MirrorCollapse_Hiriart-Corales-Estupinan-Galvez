@@ -7,18 +7,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject playerPrefab;
+    [SerializeField] private GameObject playerPrefab;
     private GameObject player;
     private PlayerController playerControl;
     private ItemList levelItems = new ItemList();
     private EnemyList levelEnemies = new EnemyList();
-    [SerializeField]
-    private string level;
+    [SerializeField] private string level;
+
+    Vector3 levelStartPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelStartPosition = new Vector3(73.04f, 2.2f, 112.23f);
+
         if (!PrefsKeys.newGame)
         {
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
@@ -85,13 +87,13 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            this.player = Instantiate(playerPrefab, new Vector3(-30, 3.25f, -45), new Quaternion(0,0,0,0));
+            this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0,0,0,0));
         }
     }
 
     private void NewGame()
     {
-        this.player = Instantiate(playerPrefab, new Vector3(-30, 3.25f, -45), new Quaternion(0, 0, 0, 0));
+        this.player = Instantiate(playerPrefab, new Vector3(73.04f, 2.45f, 112.23f), new Quaternion(0, 0, 0, 0));
         this.playerControl = this.player.GetComponent<PlayerController>();
     }
 

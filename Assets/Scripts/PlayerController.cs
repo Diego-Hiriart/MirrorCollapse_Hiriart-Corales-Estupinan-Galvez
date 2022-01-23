@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
         maxHealth = player.GetMaxHealth();
         minHealth = player.GetMinHealth();
-        health = maxHealth;
+        health = player.GetHealth();
     }
 
     private void Start()
@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeHealth(float health, bool add)
     {
-        
-
         if(add)
         {
             this.health = this.health + health < maxHealth ? this.health + health : maxHealth;
@@ -53,7 +51,9 @@ public class PlayerController : MonoBehaviour
             this.health = this.health - health > minHealth ? this.health - health : minHealth;
         }
 
-        Debug.Log("Health: " + this.health);
+        this.player.SetHealth(this.health);
+
+        Debug.Log("Health: " + this.player.GetHealth());
     }
 
     public PlayerCharacter GetPlayerInfo()
