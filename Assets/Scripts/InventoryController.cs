@@ -102,7 +102,7 @@ public class InventoryController : MonoBehaviour
                     {
                         //equip weapon
                     }
-                    else
+                    else if(item.item.type == ItemType.Collectible || item.item.type == ItemType.Ammo)
                     {
                         // do nothing if its ammo or collectibles
                     }
