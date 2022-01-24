@@ -192,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b484ca7a03459344b6021038bdf7bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 7190831291143750458}
   canJump: 0
   speed: 6
   sprintLimitTime: 3
@@ -215,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22751521a14af304d8c8615b4e8d0ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 7190831291341379435}
+  inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
 --- !u!1 &7190831291341379433
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +273,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Lamp
   - Snack
+  - Door
+  - Switch
+  - Portal
+  - Inventory
+  - Key
   layers:
   - Default
   - TransparentFX

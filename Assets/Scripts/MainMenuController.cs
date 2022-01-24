@@ -83,7 +83,7 @@ public class MainMenuController : MonoBehaviour
             FileStream fs = File.Open(filePath, FileMode.Open);
             SaveData save = (SaveData)bf.Deserialize(fs);
             PrefsKeys.newGame = false;
-            SceneManager.LoadScene(save.GetLevel());          
+            SceneManager.LoadScene(save.GetLevel());
         }
     }
 

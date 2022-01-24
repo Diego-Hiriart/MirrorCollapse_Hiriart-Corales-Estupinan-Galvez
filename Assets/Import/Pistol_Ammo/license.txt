@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pistol Ammo
+* source:	https://sketchfab.com/3d-models/pistol-ammo-3800dc18d98b459281b8720defa9a5cb
+* author:	liltoba (https://sketchfab.com/liltoba)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pistol Ammo" (https://sketchfab.com/3d-models/pistol-ammo-3800dc18d98b459281b8720defa9a5cb) by liltoba (https://sketchfab.com/liltoba) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
