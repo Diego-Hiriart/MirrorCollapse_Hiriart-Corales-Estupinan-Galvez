@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf6c63968cd5d44e803e35890ceebe4, type: 3}
   m_Name: First Aid
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+  id: 0
+  uiDisplay: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
   type: 0
   itemName: First Aid
   description: A first aid I found etc

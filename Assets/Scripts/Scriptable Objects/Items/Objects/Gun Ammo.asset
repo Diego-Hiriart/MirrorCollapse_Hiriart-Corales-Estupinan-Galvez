@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a884b48000b0f54cab60f6a02b3aace, type: 3}
   m_Name: Gun Ammo
   m_EditorClassIdentifier: 
-  prefab: {fileID: 550316681758476930, guid: 4ffb13078987bda4fb3260cd73208620, type: 3}
+  id: 0
+  uiDisplay: {fileID: 550316681758476930, guid: 4ffb13078987bda4fb3260cd73208620, type: 3}
   type: 2
   itemName: Gun Ammo
   description: Caliber .44 ammo for the gun I got somewhere in my house.

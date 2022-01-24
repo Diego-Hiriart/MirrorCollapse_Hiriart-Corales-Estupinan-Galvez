@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
   m_Name: Strange Key
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5842134377795116400, guid: fa947a87630b75e49b345ad2ae3114ee, type: 3}
+  id: 0
+  uiDisplay: {fileID: 5842134377795116400, guid: fa947a87630b75e49b345ad2ae3114ee, type: 3}
   type: 3
   itemName: Strange Key
   description: I found this key while I was in the house, it has an odd look to it,

@@ -19,9 +19,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4265337381544006976, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265337381544006976, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5842134377795116400}
     - target: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
       propertyPath: m_Name
-      value: ItemImage Variant 2
+      value: Strange Key
       objectReference: {fileID: 0}
     - target: {fileID: 7861831390462510867, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
       propertyPath: m_Pivot.x
@@ -107,5 +115,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5470302256800913304, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+    - {fileID: 4965851031460217873, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+--- !u!1 &5842134377795116400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
+  m_PrefabInstance: {fileID: 4326195339873475170}
+  m_PrefabAsset: {fileID: 0}

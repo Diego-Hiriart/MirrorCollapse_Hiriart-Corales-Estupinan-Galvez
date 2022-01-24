@@ -28,7 +28,7 @@ public class DisplayInventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, itemPanel.transform);
+            var obj = Instantiate(inventory.Container[i].item.uiDisplay, Vector3.zero, Quaternion.identity, itemPanel.transform);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             obj.name = inventory.Container[i].item.itemName;
         }
@@ -41,11 +41,11 @@ public class DisplayInventory : MonoBehaviour
             var item = inventory.Container[i];
             if(itemsDisplayed.ContainsKey(inventory.Container[i]))
             {
-                itemsDisplayed[item].GetComponentInChildren<TextMeshProUGUI>().text = item.amount.ToString("n0"); 
+                itemsDisplayed[item].GetComponentInChildren<TextMeshProUGUI>().text = item.amount.ToString("n0");
             }
             else
             {
-                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, itemPanel.transform);
+                var obj = Instantiate(inventory.Container[i].item.uiDisplay, Vector3.zero, Quaternion.identity, itemPanel.transform);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 obj.name = inventory.Container[i].item.itemName;
                 itemsDisplayed.Add(item, obj);

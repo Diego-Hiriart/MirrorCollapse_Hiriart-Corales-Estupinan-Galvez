@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5842134377795116400, guid: fa947a87630b75e49b345ad2ae3114ee, type: 3}
       propertyPath: m_Name
-      value: ItemImage Variant 3
+      value: Gun Ammo
       objectReference: {fileID: 0}
     - target: {fileID: 5842134377795116401, guid: fa947a87630b75e49b345ad2ae3114ee, type: 3}
       propertyPath: m_Pivot.x
