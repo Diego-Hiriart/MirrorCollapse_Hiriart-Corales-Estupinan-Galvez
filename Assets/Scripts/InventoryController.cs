@@ -98,6 +98,14 @@ public class InventoryController : MonoBehaviour
 
                         break;
                     }
+                    else if(item.item.type == ItemType.Weapon)
+                    {
+                        //equip weapon
+                    }
+                    else
+                    {
+                        // do nothing if its ammo or collectibles
+                    }
                 }
             }
         }
