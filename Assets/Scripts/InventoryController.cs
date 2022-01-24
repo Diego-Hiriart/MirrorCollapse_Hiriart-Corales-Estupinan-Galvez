@@ -6,35 +6,27 @@ using TMPro;
 
 public class InventoryController : MonoBehaviour
 {
-    [SerializeField]
-    private Button itemsButton;
-    [SerializeField]
-    private Button weaponsButton;
-    [SerializeField]
-    private Button recoveryButton;
-    [SerializeField]
-    private GameObject titlePanel;
+    [SerializeField] private Button useEquipButton;
+    [SerializeField] private Button exitButton;
     private TextMeshProUGUI titleText;
-    [SerializeField]
-    private GameObject itemsPanel;   
-    [SerializeField]
-    private GameObject descriptionPanel;
+    [SerializeField] private GameObject itemsPanel;
+    [SerializeField] private GameObject descriptionPanel;
     private TextMeshProUGUI itemName;
     private TextMeshProUGUI itemDescription;
-    [SerializeField]
-    private GameObject weaponPanel;
+    [SerializeField] private GameObject weaponPanel;
     private Image weaponIcon;
     private TextMeshProUGUI ammoText;
-    [SerializeField]
-    private GameObject healthPanel;
+    [SerializeField] private GameObject healthPanel;
     private Image healthBar;
+
+    GameObject selectedItem;
+
+    [SerializeField] GameController gameController;
 
     private void Awake()
     {
-        this.itemsButton.onClick.AddListener(delegate { OpenItems(); } );
-        this.weaponsButton.onClick.AddListener(delegate { OpenWeapons(); } );
-        this.recoveryButton.onClick.AddListener(delegate { OpenRecovery(); } );
-        this.titleText = this.titlePanel.GetComponentInChildren<TextMeshProUGUI>();
+        this.useEquipButton.onClick.AddListener(delegate { UseEquipItem(); } );
+        this.exitButton.onClick.AddListener(delegate { ExitInventory(); } );
         this.itemName = this.descriptionPanel.GetComponentInChildren<TextMeshProUGUI>();
         this.itemDescription = this.descriptionPanel.GetComponentInChildren<TextMeshProUGUI>();
         this.weaponIcon = this.weaponPanel.GetComponentInChildren<Image>();
@@ -59,13 +51,18 @@ public class InventoryController : MonoBehaviour
 
     }
 
-    private void OpenWeapons()
+    public void SelectItem(GameObject itemImage)
     {
-
+        selectedItem = itemImage;
     }
 
-    private void OpenRecovery()
+    public void UseEquipItem()
     {
+        
+    }
 
+    public void ExitInventory()
+    {
+        gameController.OpenCloseInventory();
     }
 }

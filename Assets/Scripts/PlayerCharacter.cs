@@ -26,6 +26,11 @@ public class PlayerCharacter : Character
         return this.inventory.GetItems();
     }
 
+    public void SetInventory(ItemList inventory)
+    {
+        this.inventory = inventory;
+    }
+
     public ItemList GetInventory()
     {
         return this.inventory;

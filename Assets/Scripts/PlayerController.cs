@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public InventoryObject inventory;
+
     private PlayerCharacter player;
     private float health;
 
@@ -32,9 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))//If a E is pressed
+        if (Input.GetKeyDown(KeyCode.E))//If E is pressed
         {
-            if (Time.timeScale == 1) {
+            if (Time.timeScale == 1) 
+            {
                 ObjectInteract();
             }
         }
@@ -76,7 +79,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (item.GetItem().IsPickable())
                 {
-                    item.PickItemUp();
+                    inventory.AddItem(item.itemObject, 1);
+                    Destroy(item.gameObject);
                 }
             }
             else if (impact.collider.TryGetComponent<SavingController>(out saveMirror))
@@ -96,5 +100,10 @@ public class PlayerController : MonoBehaviour
                 impact.transform.GetComponentInParent<MirrorPortal>().ChangeLevel();
             }
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 }

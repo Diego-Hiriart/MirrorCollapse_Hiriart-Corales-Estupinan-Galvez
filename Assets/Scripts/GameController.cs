@@ -5,16 +5,11 @@ using UnityEngine.Audio;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField]
-    private UIController UI;
-    [SerializeField]
-    private Canvas hud;
-    [SerializeField]
-    private PlayerController player;
-    [SerializeField]
-    private AudioMixer effectsMixer;
-    [SerializeField]
-    private AudioMixer musicMixer;
+    [SerializeField] private UIController UI;
+    [SerializeField] private Canvas hud;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private AudioMixer effectsMixer;
+    [SerializeField] private AudioMixer musicMixer;
 
     private void Awake()
     {
@@ -79,7 +74,7 @@ public class GameController : MonoBehaviour
         
     }
 
-    private void OpenCloseInventory()
+    public void OpenCloseInventory()
     {
         if (!this.UI.IsPauseActive() && !this.UI.IsInventoryActive())
         {
