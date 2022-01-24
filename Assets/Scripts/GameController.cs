@@ -71,7 +71,6 @@ public class GameController : MonoBehaviour
             this.UI.SetPauseMenuState(false);
             this.hud.gameObject.SetActive(true);
         }
-        
     }
 
     public void OpenCloseInventory()

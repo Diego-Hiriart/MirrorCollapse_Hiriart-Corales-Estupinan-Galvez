@@ -17,7 +17,6 @@ public class DisplayInventory : MonoBehaviour
     private void Start()
     {
         CreateDisplay();
-        Debug.Log(itemPanel.name);
     }
 
     private void Update()
