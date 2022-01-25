@@ -35,7 +35,7 @@ public class ItemController : MonoBehaviour
     public void PickItemUp()
     {
         if (this.item.IsPickable())
-        {           
+        {                     
             level.AddToPlayerInventory(this.item);
         }
     }
