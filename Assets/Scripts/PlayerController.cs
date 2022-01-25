@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -67,8 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             this.player.SetHealth(this.player.GetHealth() - health > minHealth ? this.player.GetHealth() - health : minHealth);
         }
-
-        Debug.Log("Health: " + this.player.GetHealth());
     }
 
     public PlayerCharacter GetPlayerInfo()

@@ -24,6 +24,9 @@ public class InventoryController : MonoBehaviour
 
     [SerializeField] GameController gameController;
     PlayerController playerController;
+
+    float prevHealth;
+    float newHealth;
     
     int count = 0;
 
@@ -35,7 +38,7 @@ public class InventoryController : MonoBehaviour
         this.itemDescription = this.descriptionPanel.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
         this.weaponIcon = this.weaponPanel.GetComponentInChildren<Image>();
         this.ammoText = this.weaponPanel.GetComponentInChildren<TextMeshProUGUI>();
-        this.healthBar = this.healthPanel.GetComponentInChildren<Image>();
+        this.healthBar = this.healthPanel.transform.GetChild(1).GetChild(1).GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
@@ -44,13 +47,28 @@ public class InventoryController : MonoBehaviour
         if(count == 0)
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            prevHealth = playerController.GetPlayerInfo().GetHealth();
+            SetHealthUI(playerController.GetPlayerInfo().GetHealth());
+
             count++;
         }
+
+        newHealth = playerController.GetPlayerInfo().GetHealth();
+        if(newHealth < prevHealth)
+        {
+            prevHealth = newHealth;
+            SetHealthUI(newHealth);
+        }    
     }
 
     private void OpenItems()
     {
 
+    }
+
+    public void SetHealthUI(float newHp)
+    {
+        healthBar.fillAmount = newHp / playerController.GetPlayerInfo().GetMaxHealth();
     }
 
     public void SelectItem(GameObject itemImage)
