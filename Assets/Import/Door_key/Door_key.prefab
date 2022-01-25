@@ -183,6 +183,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3719410214063645046}
+  - component: {fileID: 1632884717}
+  - component: {fileID: 1632884716}
   m_Layer: 0
   m_Name: Door_key
   m_TagString: Key
@@ -205,3 +207,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1632884717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683181783759828215}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20339966, y: 0.05498123, z: 0.3540573}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1632884716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683181783759828215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbc92b91a9355c4ea605a7092baee4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemObject: {fileID: 11400000, guid: e16b45a96b474fb48af93bdd1aa2961d, type: 2}
+  isPickable: 1
+  isWeaponAmmo: 0
+  itemName: Strange Key
+  itemID: 

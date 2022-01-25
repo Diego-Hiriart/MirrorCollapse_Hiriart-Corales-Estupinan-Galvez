@@ -101,9 +101,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    private void OnApplicationQuit()
-    {
-        inventory.Container.Clear();
-    }
 }

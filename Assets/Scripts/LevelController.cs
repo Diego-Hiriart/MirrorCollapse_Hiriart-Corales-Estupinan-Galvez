@@ -28,6 +28,7 @@ public class LevelController : MonoBehaviour
         else
         {
             NewGame();
+            ClearInventory();
         }      
     }
 
@@ -109,5 +110,15 @@ public class LevelController : MonoBehaviour
     {
         
         this.playerControl.GetPlayerInfo().AddToInventory(item);
+    }
+
+    private void OnApplicationQuit()
+    {
+        ClearInventory();
+    }
+
+    private void ClearInventory()
+    {
+        inventory.Container.Clear();
     }
 }

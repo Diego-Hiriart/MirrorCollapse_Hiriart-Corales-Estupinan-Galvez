@@ -16,6 +16,7 @@ public class DisplayInventory : MonoBehaviour
 
     private void Start()
     {
+        DeleteDisplayedItems();
         CreateDisplay();
     }
 
@@ -24,8 +25,18 @@ public class DisplayInventory : MonoBehaviour
         HandleDisplay();
     }
 
+    public void DeleteDisplayedItems()
+    {
+        foreach (Transform child in itemPanel.transform) 
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
     public void CreateDisplay()
     {
+        DeleteDisplayedItems();
+
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             var obj = Instantiate(inventory.Container[i].item.uiDisplay, Vector3.zero, Quaternion.identity, itemPanel.transform);
