@@ -13,7 +13,8 @@ public class LevelController : MonoBehaviour
     private GameObject player;
     private PlayerController playerControl;
     private List<ItemController> levelItems = new List<ItemController>();
-    private EnemyList levelEnemies = new EnemyList();
+    private List<EnemyController> levelEnemies = new List<EnemyController>();
+    private EnemyList deadEnemies = new EnemyList();
     [SerializeField] private string level;
     [SerializeField] Vector3 levelStartPosition;
 
@@ -42,6 +43,16 @@ public class LevelController : MonoBehaviour
         this.levelItems.Add(item);
     }
 
+    public void AddEnemy(EnemyController enemy)
+    {
+        this.levelEnemies.Add(enemy);
+    }
+
+    public void AddDefeatedEnemy(Enemy enemy)
+    {
+        this.deadEnemies.AddEnemy(enemy);
+    }
+
     public void SaveGame()
     {
         SaveData save = this.CreateSaveData();
@@ -56,7 +67,7 @@ public class LevelController : MonoBehaviour
 
     private SaveData CreateSaveData()
     {
-        return new SaveData(this.level, this.playerControl.GetPlayerInfo(), this.playerControl.GetPlayerInfo().GetInventory(), this.levelEnemies);
+        return new SaveData(this.level, this.playerControl.GetPlayerInfo(), this.playerControl.GetPlayerInfo().GetInventory(), this.deadEnemies);
     }
 
     public void LoadGame()
@@ -67,8 +78,8 @@ public class LevelController : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fs = File.Open(filePath, FileMode.Open);
             SaveData save = (SaveData)bf.Deserialize(fs);
-
-            List<ItemController> toBeDeleted = new List<ItemController>();
+            //Delete picked up items
+            List<Object> toBeDeleted = new List<Object>();//Object list to use with items and enemies
             foreach (ItemController levelItem in this.levelItems)
             {
                 foreach (Item playerItem in save.GetPlayerInventory())
@@ -86,6 +97,26 @@ public class LevelController : MonoBehaviour
             {
                 Destroy(item.gameObject);
             }
+            toBeDeleted.Clear();//Reset list to use with enemies
+            //Delete defeated enemies
+            foreach (EnemyController levelEnemy in this.levelEnemies)
+            {
+                foreach (Enemy playerEnemy in save.GetPlayerDefeatedEnemies())
+                {
+                    foreach (string id in playerEnemy.GetIds())
+                    {
+                        if (levelEnemy.GetEnemyID().Equals(id))
+                        {
+                            toBeDeleted.Add(levelEnemy);
+                        }
+                    }
+                }
+            }
+            foreach (EnemyController item in toBeDeleted)
+            {
+                Destroy(item.gameObject);
+            }
+
             List<float> pos = save.GetPlayer().GetTransform().GetPosition();
             List<float> rot = save.GetPlayer().GetTransform().GetRotation();
             this.player = Instantiate(playerPrefab, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
@@ -107,7 +138,6 @@ public class LevelController : MonoBehaviour
 
     public void AddToPlayerInventory(Item item)
     {
-        
         this.playerControl.GetPlayerInfo().AddToInventory(item);
     }
 }

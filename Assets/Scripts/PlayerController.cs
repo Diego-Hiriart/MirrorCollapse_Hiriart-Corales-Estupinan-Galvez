@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (item.GetItem().IsPickable())
                 {
+                    item.PickItemUp();
                     inventory.AddItem(item.itemObject, 1);
                     Destroy(item.gameObject);
                 }

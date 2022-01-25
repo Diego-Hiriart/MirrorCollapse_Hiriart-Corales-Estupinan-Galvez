@@ -9,17 +9,17 @@ public class SaveData
 {
     private PlayerCharacter player;
     private ItemList items = new ItemList();
-    private List<EnemyList> enemies = new List<EnemyList>();
+    private EnemyList defeatedEnemies = new EnemyList();
     private string level;
 
     public SaveData(){}
 
-    public SaveData(string level, PlayerCharacter player, ItemList itemlists, EnemyList enemyLists)
+    public SaveData(string level, PlayerCharacter player, ItemList itemlists, EnemyList enemies)
     {
         this.level = level;
         this.player = player;
         this.items = itemlists;
-        this.enemies.Add(enemyLists);
+        this.defeatedEnemies = enemies;
     }
 
     public PlayerCharacter GetPlayer()
@@ -30,6 +30,11 @@ public class SaveData
     public List<Item> GetPlayerInventory()
     {
         return this.player.GetInventory().GetItems();
+    }
+
+    public List<Enemy> GetPlayerDefeatedEnemies()
+    {
+        return this.defeatedEnemies.GetEnemies();
     }
 
     public string GetLevel()

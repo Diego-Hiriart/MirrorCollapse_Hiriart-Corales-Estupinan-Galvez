@@ -49,9 +49,4 @@ public class ItemController : MonoBehaviour
     {
         return this.itemID;
     }
-
-    public string GetItemID()
-    {
-        return this.itemID;
-    }
 }
