@@ -10,12 +10,14 @@ public class EnemyController : MonoBehaviour
     protected NavMeshAgent enemyAgent;
     private LevelController level;
     [SerializeField] private string enemyID;
+    [SerializeField] private string enemyName;
 
     bool isChasing;
 
     // Start is called before the first frame update
     void Start()
-    {      
+    {
+        this.enemy = new Enemy(this.enemyName, this.enemyID);
         enemyAgent = this.GetComponent<NavMeshAgent>();
         this.level = GetComponentInParent<LevelController>();
         this.AddThisToLevel();
@@ -33,8 +35,11 @@ public class EnemyController : MonoBehaviour
         {
             enemyAgent.SetDestination(player.transform.position);         
         }
+    }
 
-        if (this.enemy.GetHealth()<=0)
+    public void ChangeHealth()
+    {
+        if (this.enemy.GetHealth() <= 0)
         {
             this.level.AddDefeatedEnemy(this.enemy);
         }

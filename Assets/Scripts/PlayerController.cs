@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public InventoryObject inventory;
 
     private PlayerCharacter player;
-    private float health;
 
     float maxHealth;
     float minHealth;
@@ -23,12 +22,11 @@ public class PlayerController : MonoBehaviour
 
         maxHealth = player.GetMaxHealth();
         minHealth = player.GetMinHealth();
-        health = player.GetHealth();
     }
 
     private void Start()
     {
-        Debug.Log(this.player.GetItems().Count);
+        
     }
 
     // Update is called once per frame
@@ -47,14 +45,12 @@ public class PlayerController : MonoBehaviour
     {
         if(add)
         {
-            this.health = this.health + health < maxHealth ? this.health + health : maxHealth;
+            this.player.SetHealth(this.player.GetHealth() + health < maxHealth ? this.player.GetHealth() + health : maxHealth);
         }
         else
         {
-            this.health = this.health - health > minHealth ? this.health - health : minHealth;
+            this.player.SetHealth(this.player.GetHealth() - health > minHealth ? this.player.GetHealth() - health : minHealth);
         }
-
-        this.player.SetHealth(this.health);
 
         Debug.Log("Health: " + this.player.GetHealth());
     }

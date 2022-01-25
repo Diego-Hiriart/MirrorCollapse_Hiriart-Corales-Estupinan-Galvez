@@ -115,7 +115,7 @@ public class LevelController : MonoBehaviour
             foreach (EnemyController item in toBeDeleted)
             {
                 Destroy(item.gameObject);
-            }
+            }           
 
             List<float> pos = save.GetPlayer().GetTransform().GetPosition();
             List<float> rot = save.GetPlayer().GetTransform().GetRotation();
