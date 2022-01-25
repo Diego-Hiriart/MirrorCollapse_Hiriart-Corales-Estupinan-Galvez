@@ -8,6 +8,12 @@ public class DoorInteractable : MonoBehaviour
     Transform closedPos;
     Transform openPos;
 
+    [SerializeField] bool needsKey;
+    [SerializeField] bool westDoor;
+    [SerializeField] bool eastDoor;
+
+    [SerializeField] InventoryObject inventory;
+
     Animator animator;
 
     void Awake()
@@ -26,6 +32,25 @@ public class DoorInteractable : MonoBehaviour
 
     public void OpenCloseDoor()
     {
-        animator.SetTrigger("OpenCloseDoor");
+        if(needsKey)
+        {
+            foreach (var item in inventory.Container)
+            {
+                if(item.item.itemName == "CursedKey" && westDoor)
+                {
+                    animator.SetTrigger("OpenCloseDoor");
+
+                }
+                
+                if(item.item.name == "Strange Key" && eastDoor)
+                {
+                    animator.SetTrigger("OpenCloseDoor");
+                }
+            }
+        }
+        else
+        {
+            animator.SetTrigger("OpenCloseDoor");
+        }
     }
 }

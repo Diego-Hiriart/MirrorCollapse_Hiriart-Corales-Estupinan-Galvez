@@ -238,6 +238,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPivot: {fileID: 4466187598492649521}
+  needsKey: 1
+  westDoor: 0
+  eastDoor: 1
+  inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
 --- !u!114 &1395024547369481116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPivot: {fileID: 4466187599115532772}
+  needsKey: 0
+  westDoor: 0
+  eastDoor: 0
+  inventory: {fileID: 0}
 --- !u!114 &1395024547898651632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPivot: {fileID: 4466187599594509621}
+  needsKey: 0
+  westDoor: 0
+  eastDoor: 0
+  inventory: {fileID: 0}
 --- !u!208 &1063972164
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -914,6 +926,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPivot: {fileID: 7195597276800753778}
+  needsKey: 0
+  westDoor: 0
+  eastDoor: 0
+  inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
 --- !u!1001 &4466187599193610022
 PrefabInstance:
   m_ObjectHideFlags: 0

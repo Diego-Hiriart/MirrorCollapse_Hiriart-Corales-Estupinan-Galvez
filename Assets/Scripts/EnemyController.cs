@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     private LevelController level;
     [SerializeField] private string enemyID;
     [SerializeField] private string enemyName;
+    [SerializeField] bool dropsItem;
+    [SerializeField] GameObject itemPrefab;
 
     bool isChasing;
 
@@ -42,6 +44,11 @@ public class EnemyController : MonoBehaviour
         if (this.enemy.GetHealth() <= 0)
         {
             this.level.AddDefeatedEnemy(this.enemy);
+
+            if(dropsItem)
+            {
+                Instantiate(itemPrefab, this.transform.position, this.transform.rotation);
+            }
         }
     }
 
