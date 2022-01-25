@@ -54,7 +54,7 @@ public class InventoryController : MonoBehaviour
         }
 
         newHealth = playerController.GetPlayerInfo().GetHealth();
-        if(newHealth < prevHealth)
+        if(newHealth != prevHealth)
         {
             prevHealth = newHealth;
             SetHealthUI(newHealth);
@@ -96,8 +96,10 @@ public class InventoryController : MonoBehaviour
             {
                 if(item.item.itemName == selectedItem.name)
                 {
-                    if(item.item.type == ItemType.Health)
+                    if(item.item is HealthObject)
                     {
+                        var healthItem = item.item as HealthObject;
+
                         if(item.amount > 1)
                         {
                             item.amount--;
@@ -112,6 +114,8 @@ public class InventoryController : MonoBehaviour
                             itemName.text = "";
                             itemDescription.text = "";
                         }
+                        
+                        playerController.ChangeHealth(healthItem.restoreHealthValue, true);
 
                         break;
                     }
