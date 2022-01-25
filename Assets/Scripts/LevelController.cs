@@ -28,8 +28,9 @@ public class LevelController : MonoBehaviour
         else
         {
             NewGame();
-            ClearInventory();
-        }      
+        }
+
+        ClearInventory();
     }
 
     // Update is called once per frame

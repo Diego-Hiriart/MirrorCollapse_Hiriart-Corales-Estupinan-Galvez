@@ -6,11 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     public InventoryObject inventory;
 
+    [SerializeField] GameObject bat;
+    [SerializeField] GameObject pistol;
+
     private PlayerCharacter player;
+    InventoryController inventoryController;
     private float health;
 
     float maxHealth;
     float minHealth;
+
+    int count = 0;
     
     // Start is called before the first frame update
     void Awake()
@@ -40,6 +46,20 @@ public class PlayerController : MonoBehaviour
             {
                 ObjectInteract();
             }
+        }
+    }
+
+    public void EquipWeapon(bool isGun)
+    {
+        if(isGun)
+        {
+            bat.SetActive(false);
+            pistol.SetActive(true);
+        }
+        else
+        {
+            bat.SetActive(true);
+            pistol.SetActive(false);
         }
     }
 

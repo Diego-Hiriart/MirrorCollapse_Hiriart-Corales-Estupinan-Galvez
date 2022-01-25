@@ -23,6 +23,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField] InventoryObject inventory;
 
     [SerializeField] GameController gameController;
+    PlayerController playerController;
+    
+    int count = 0;
 
     private void Awake()
     {
@@ -35,16 +38,14 @@ public class InventoryController : MonoBehaviour
         this.healthBar = this.healthPanel.GetComponentInChildren<Image>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if(count == 0)
+        {
+            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            count++;
+        }
     }
 
     private void OpenItems()
@@ -65,8 +66,6 @@ public class InventoryController : MonoBehaviour
                 break;
             }
         }
-
-        
     }
 
     public void UseEquipItem()
@@ -98,18 +97,43 @@ public class InventoryController : MonoBehaviour
 
                         break;
                     }
-                    else if(item.item.type == ItemType.Weapon)
+                    else if(item.item is WeaponObject)
                     {
-                        //equip weapon
+                        var weapon = item.item as WeaponObject;
+                        if(weapon.isGun == true)
+                        {
+                            playerController.EquipWeapon(true);
+                            float ammoQuantity = 0;
+
+                            foreach (var item2 in inv)
+                            {
+                                if(item2.item is AmmoObject)
+                                {
+                                    var ammo = item2.item as AmmoObject;
+                                    ammoQuantity += ammo.quantity;
+                                }
+                            }
+
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ammoQuantity.ToString("n0");
+                        }
+                        else
+                        {
+                            playerController.EquipWeapon(false);
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "∞";
+                        }
+
+                        weaponPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.itemName;
                     }
                     else if(item.item.type == ItemType.Collectible || item.item.type == ItemType.Ammo)
                     {
-                        // do nothing if its ammo or collectibles
+                        // do nothing
                     }
                 }
             }
         }
     }
+
+    
 
     public void ExitInventory()
     {

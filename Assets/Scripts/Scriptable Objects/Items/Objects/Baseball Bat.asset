@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20ec59a31fe1e5449321fd27de8c80a, type: 3}
+  m_Name: Baseball Bat
+  m_EditorClassIdentifier: 
+  id: 0
+  uiDisplay: {fileID: 5842134377795116400, guid: 502dddfd9a80de644813864a0a336e13, type: 3}
+  type: 1
+  itemName: Baseball Bat
+  description: I bought this baseball bat a while ago... Even though I hate baseball.
+  atkDamage: 20
+  isGun: 0
