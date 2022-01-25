@@ -6,52 +6,46 @@ using TMPro;
 
 public class InventoryController : MonoBehaviour
 {
-    [SerializeField]
-    private Button itemsButton;
-    [SerializeField]
-    private Button weaponsButton;
-    [SerializeField]
-    private Button recoveryButton;
-    [SerializeField]
-    private GameObject titlePanel;
+    [SerializeField] private Button useEquipButton;
+    [SerializeField] private Button exitButton;
     private TextMeshProUGUI titleText;
-    [SerializeField]
-    private GameObject itemsPanel;   
-    [SerializeField]
-    private GameObject descriptionPanel;
+    [SerializeField] private GameObject itemsPanel;
+    [SerializeField] private GameObject descriptionPanel;
     private TextMeshProUGUI itemName;
     private TextMeshProUGUI itemDescription;
-    [SerializeField]
-    private GameObject weaponPanel;
+    [SerializeField] private GameObject weaponPanel;
     private Image weaponIcon;
     private TextMeshProUGUI ammoText;
-    [SerializeField]
-    private GameObject healthPanel;
+    [SerializeField] private GameObject healthPanel;
     private Image healthBar;
+
+    GameObject selectedItem;
+    [SerializeField] InventoryObject inventory;
+
+    [SerializeField] GameController gameController;
+    PlayerController playerController;
+    
+    int count = 0;
 
     private void Awake()
     {
-        this.itemsButton.onClick.AddListener(delegate { OpenItems(); } );
-        this.weaponsButton.onClick.AddListener(delegate { OpenWeapons(); } );
-        this.recoveryButton.onClick.AddListener(delegate { OpenRecovery(); } );
-        this.titleText = this.titlePanel.GetComponentInChildren<TextMeshProUGUI>();
-        this.itemName = this.descriptionPanel.GetComponentInChildren<TextMeshProUGUI>();
-        this.itemDescription = this.descriptionPanel.GetComponentInChildren<TextMeshProUGUI>();
+        // this.useEquipButton.onClick.AddListener(delegate { UseEquipItem(); } );
+        this.exitButton.onClick.AddListener(delegate { ExitInventory(); } );
+        this.itemName = this.descriptionPanel.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+        this.itemDescription = this.descriptionPanel.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
         this.weaponIcon = this.weaponPanel.GetComponentInChildren<Image>();
         this.ammoText = this.weaponPanel.GetComponentInChildren<TextMeshProUGUI>();
         this.healthBar = this.healthPanel.GetComponentInChildren<Image>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if(count == 0)
+        {
+            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            count++;
+        }
     }
 
     private void OpenItems()
@@ -59,13 +53,90 @@ public class InventoryController : MonoBehaviour
 
     }
 
-    private void OpenWeapons()
+    public void SelectItem(GameObject itemImage)
     {
+        selectedItem = itemImage;
 
+        foreach (var item in inventory.Container)
+        {
+            if(item.item.itemName == selectedItem.name)
+            {
+                itemName.text = item.item.itemName;
+                itemDescription.text = item.item.description;
+                break;
+            }
+        }
     }
 
-    private void OpenRecovery()
+    public void UseEquipItem()
     {
+        if(selectedItem)
+        {
+            var inv = inventory.Container;
 
+            foreach (var item in inv)
+            {
+                if(item.item.itemName == selectedItem.name)
+                {
+                    if(item.item.type == ItemType.Health)
+                    {
+                        if(item.amount > 1)
+                        {
+                            item.amount--;
+                            var text = selectedItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                            text.text = item.amount.ToString("n0");
+                        }
+                        else if(item.amount == 1)
+                        {
+                            inv.Remove(item);
+                            Destroy(selectedItem);
+
+                            itemName.text = "";
+                            itemDescription.text = "";
+                        }
+
+                        break;
+                    }
+                    else if(item.item is WeaponObject)
+                    {
+                        var weapon = item.item as WeaponObject;
+                        if(weapon.isGun == true)
+                        {
+                            playerController.EquipWeapon(true);
+                            float ammoQuantity = 0;
+
+                            foreach (var item2 in inv)
+                            {
+                                if(item2.item is AmmoObject)
+                                {
+                                    var ammo = item2.item as AmmoObject;
+                                    ammoQuantity += ammo.quantity;
+                                }
+                            }
+
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ammoQuantity.ToString("n0");
+                        }
+                        else
+                        {
+                            playerController.EquipWeapon(false);
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "∞";
+                        }
+
+                        weaponPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.itemName;
+                    }
+                    else if(item.item.type == ItemType.Collectible || item.item.type == ItemType.Ammo)
+                    {
+                        // do nothing
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    public void ExitInventory()
+    {
+        gameController.OpenCloseInventory();
     }
 }

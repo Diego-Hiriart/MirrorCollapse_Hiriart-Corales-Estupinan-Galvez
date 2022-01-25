@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject pause;
-    [SerializeField]
-    private GameObject inventory;
+    [SerializeField] private GameObject pause;
+    [SerializeField] private GameObject inventory;
     
     // Start is called before the first frame update
     void Start()
