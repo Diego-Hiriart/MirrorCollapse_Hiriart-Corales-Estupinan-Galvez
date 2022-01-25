@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public InventoryObject inventory;
+    [SerializeField] GameObject bat;
+    [SerializeField] GameObject pistol;
 
     private PlayerCharacter player;
 
@@ -38,6 +40,20 @@ public class PlayerController : MonoBehaviour
             {
                 ObjectInteract();
             }
+        }
+    }
+    
+    public void EquipWeapon(bool isGun)
+    {
+        if(isGun)
+        {
+            bat.SetActive(false);
+            pistol.SetActive(true);
+        }
+        else
+        {
+            bat.SetActive(true);
+            pistol.SetActive(false);
         }
     }
 

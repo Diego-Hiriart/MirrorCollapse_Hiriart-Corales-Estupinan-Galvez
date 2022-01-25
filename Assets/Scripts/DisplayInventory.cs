@@ -14,6 +14,11 @@ public class DisplayInventory : MonoBehaviour
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
+    private void Awake()
+    {
+        DeleteDisplayedItems();
+    }
+
     private void Start()
     {
         DeleteDisplayedItems();

@@ -1086,7 +1086,7 @@ MonoBehaviour:
   isPickable: 1
   isWeaponAmmo: 0
   itemName: First Aid
-  itemID: 
+  itemID: FirstAid11
 --- !u!65 &336484765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5340,6 +5340,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6143943796253780088}
     m_Modifications:
+    - target: {fileID: 1632884716, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
+      propertyPath: itemID
+      value: Key11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632884716, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
+      propertyPath: itemName
+      value: Key
+      objectReference: {fileID: 0}
     - target: {fileID: 3719410214063645046, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
       propertyPath: m_RootOrder
       value: 4
