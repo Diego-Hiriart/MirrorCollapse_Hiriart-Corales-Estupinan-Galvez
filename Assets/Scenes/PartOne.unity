@@ -3413,25 +3413,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mirror
       objectReference: {fileID: 0}
-    - target: {fileID: 1191087110716167530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1191087112240410530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191087112240410530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191087112240410530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191087112240410530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1191087112240410530, guid: f009aff1c3a46a7438429ee40d21155c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5366,7 +5350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3719410214063645046, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.274
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 3719410214063645046, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5411,41 +5395,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3719410214063645046, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
   m_PrefabInstance: {fileID: 1632884713}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1632884715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5683181783759828215, guid: 7ad16057ebf6d224dafb21f7829dcd39, type: 3}
-  m_PrefabInstance: {fileID: 1632884713}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1632884716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632884715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fbc92b91a9355c4ea605a7092baee4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemObject: {fileID: 11400000, guid: e16b45a96b474fb48af93bdd1aa2961d, type: 2}
-  isPickable: 1
-  isWeaponAmmo: 0
-  itemName: Strange Key
-  itemID: 
---- !u!65 &1632884717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632884715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.20339966, y: 0.05498123, z: 0.3540573}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1646672899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11543,7 +11492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d845f6fa531f17541b0c4ced857c9029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
   level: PartOne
   levelStartPosition: {x: 71.12, y: 2.3, z: 111.13}
