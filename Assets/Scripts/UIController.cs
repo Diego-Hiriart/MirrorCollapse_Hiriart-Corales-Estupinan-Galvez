@@ -6,12 +6,14 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject endMenu;
     
     // Start is called before the first frame update
     void Start()
     {
         this.SetPauseMenuState(false);
         this.SetPauseInventoryMenuState(false);
+        endMenu.SetActive(false);
     }
 
     // Update is called once per frame

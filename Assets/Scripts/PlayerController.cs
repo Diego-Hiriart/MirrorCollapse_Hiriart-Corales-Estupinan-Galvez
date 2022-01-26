@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public InventoryObject inventory;
     [SerializeField] public GameObject bat;
     [SerializeField] public GameObject pistol;
+
     public GameObject ammo;
 
     private PlayerCharacter player;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
+        ChangeRedScreenAlpha(player.GetHealth());
     }
 
     // Update is called once per frame

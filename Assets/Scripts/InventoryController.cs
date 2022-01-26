@@ -25,6 +25,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] GameController gameController;
     PlayerController playerController;
 
+    [SerializeField] GameObject endMenu;
+
     float prevHealth;
     float newHealth;
     

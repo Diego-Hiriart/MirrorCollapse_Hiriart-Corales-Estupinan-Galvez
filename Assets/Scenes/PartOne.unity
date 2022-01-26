@@ -1383,6 +1383,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5751474907842503542, guid: 1237d42f904c1c64c8dd04db238b2bbc, type: 3}
   m_PrefabInstance: {fileID: 381143275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386319860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 386319860, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+  m_PrefabInstance: {fileID: 8231886732887250374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &387754688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8444,9 +8449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 350313319816218774}
   hud: {fileID: 2455331549883091796}
-  player: {fileID: 0}
   effectsMixer: {fileID: 24100000, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
   musicMixer: {fileID: 24100000, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
+  endMenu: {fileID: 386319860}
 --- !u!1 &7496396093345501598
 GameObject:
   m_ObjectHideFlags: 0
@@ -8547,6 +8552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386319865, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 6143943796001400952}
     - target: {fileID: 8566155750503561046, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: gameController
       value: 
