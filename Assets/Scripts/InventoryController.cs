@@ -39,6 +39,7 @@ public class InventoryController : MonoBehaviour
         this.weaponIcon = this.weaponPanel.GetComponentInChildren<Image>();
         this.ammoText = this.weaponPanel.GetComponentInChildren<TextMeshProUGUI>();
         this.healthBar = this.healthPanel.transform.GetChild(1).GetChild(1).GetComponentInChildren<Image>();
+        weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "-";
     }
 
     // Update is called once per frame
@@ -59,6 +60,8 @@ public class InventoryController : MonoBehaviour
             prevHealth = newHealth;
             SetHealthUI(newHealth);
         }    
+
+        HandleBullets();
     }
 
     private void OpenItems()
@@ -147,18 +150,6 @@ public class InventoryController : MonoBehaviour
                         if(weapon.isGun == true)
                         {
                             playerController.EquipWeapon(true);
-                            float ammoQuantity = 0;
-
-                            foreach (var item2 in inv)
-                            {
-                                if(item2.item is AmmoObject)
-                                {
-                                    var ammo = item2.item as AmmoObject;
-                                    ammoQuantity += ammo.quantity;
-                                }
-                            }
-
-                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ammoQuantity.ToString("n0");
                         }
                         else
                         {
@@ -168,7 +159,18 @@ public class InventoryController : MonoBehaviour
 
                         weaponPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.itemName;
                     }
-                    else if(item.item.type == ItemType.Collectible || item.item.type == ItemType.Ammo)
+                    else if(item.item is AmmoObject)
+                    {
+                        if(playerController.pistol.activeSelf)
+                        {
+                            float ammoQuantity = 0;
+                            var ammo = item.item as AmmoObject;
+                            ammoQuantity = item.amount * ammo.quantity;
+                            
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ammoQuantity.ToString("n0");
+                        }
+                    }
+                    else if(item.item.type == ItemType.Collectible)
                     {
                         // do nothing
                     }
@@ -177,7 +179,21 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    
+    public void HandleBullets()
+    {
+        if(playerController.pistol.activeSelf)
+        {
+            foreach (var item in inventory.Container)
+            {
+                if(item.item is AmmoObject)
+                {
+                    var ammo = item.item as AmmoObject;
+
+                    weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = (item.amount * ammo.quantity).ToString("n0");
+                }
+            }
+        }
+    }
 
     public void ExitInventory()
     {

@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public InventoryObject inventory;
-    [SerializeField] GameObject bat;
-    [SerializeField] GameObject pistol;
+    [SerializeField] public GameObject bat;
+    [SerializeField] public GameObject pistol;
+    public GameObject ammo;
 
     private PlayerCharacter player;
 

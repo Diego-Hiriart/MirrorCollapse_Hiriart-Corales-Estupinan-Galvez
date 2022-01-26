@@ -9,6 +9,8 @@ public class ItemController : MonoBehaviour
     private Item item;
     [SerializeField] private bool isPickable;
     [SerializeField] private bool isWeaponAmmo;
+    public float ammoQuantity;
+    public float ammoMaxQuantity;
     [SerializeField] private string itemName;
     private LevelController level;
     [SerializeField] private string itemID;

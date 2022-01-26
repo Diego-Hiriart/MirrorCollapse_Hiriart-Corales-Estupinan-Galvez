@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private AudioMixer effectsMixer;
     [SerializeField] private AudioMixer musicMixer;
-    [SerializeField] InventoryController inventoryController;
 
     private void Awake()
     {

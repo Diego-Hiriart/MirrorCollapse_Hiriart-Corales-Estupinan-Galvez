@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
         this.enemy = new Enemy(this.enemyName, this.enemyID);
         enemyAgent = this.GetComponent<NavMeshAgent>();
         this.level = GetComponentInParent<LevelController>();
+        this.enemy.SetHealth(70);
         this.AddThisToLevel();
     }
 
@@ -39,8 +40,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void ChangeHealth()
+    public void ChangeHealth(float health, bool add)
     {
+        if(add)
+        {
+            this.enemy.SetHealth(this.enemy.GetHealth() + health < 60 ? this.enemy.GetHealth() + health : 60);
+        }
+        else
+        {
+            this.enemy.SetHealth(this.enemy.GetHealth() - health > 0 ? this.enemy.GetHealth() - health : 0);
+        }
+
         if (this.enemy.GetHealth() <= 0)
         {
             this.level.AddDefeatedEnemy(this.enemy);
@@ -49,6 +59,8 @@ public class EnemyController : MonoBehaviour
             {
                 Instantiate(itemPrefab, this.transform.position, this.transform.rotation);
             }
+
+            Destroy(this.gameObject);
         }
     }
 

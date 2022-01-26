@@ -18,5 +18,5 @@ MonoBehaviour:
   itemName: Pistol
   description: I got this gun as soon as I moved in this house. I hope iI won't ever
     need it.
-  atkDamage: 50
+  atkDamage: 30
   isGun: 1
