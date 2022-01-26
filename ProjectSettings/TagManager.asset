@@ -13,6 +13,7 @@ TagManager:
   - Key
   - Enemy
   - Ammo
+  - RedScreen
   layers:
   - Default
   - TransparentFX

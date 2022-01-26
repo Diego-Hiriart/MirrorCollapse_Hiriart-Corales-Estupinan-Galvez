@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerCharacter player;
 
+    Image redScreenImage;
+
     float maxHealth;
     float minHealth;
     
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
+        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,16 @@ public class PlayerController : MonoBehaviour
                 ObjectInteract();
             }
         }
+    }
+
+    public void ChangeRedScreenAlpha(float health)
+    {
+        float value = 100 - health;
+        value /= 100;
+        value /= 4;
+        Debug.Log(value);
+        Debug.Log(health);
+        redScreenImage.color = new Color(255, 0, 0, value);
     }
     
     public void EquipWeapon(bool isGun)
@@ -68,6 +80,8 @@ public class PlayerController : MonoBehaviour
         {
             this.player.SetHealth(this.player.GetHealth() - health > minHealth ? this.player.GetHealth() - health : minHealth);
         }
+
+        ChangeRedScreenAlpha(player.GetHealth());
     }
 
     public PlayerCharacter GetPlayerInfo()

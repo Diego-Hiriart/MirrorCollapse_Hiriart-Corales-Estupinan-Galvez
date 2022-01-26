@@ -219,6 +219,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
   bat: {fileID: 177529978758960955}
   pistol: {fileID: 7907616736097167693}
+  UIHUD: {fileID: 2563875563581011742, guid: 2f122c21fc72f664ba34aa61b071bf03, type: 3}
 --- !u!1 &7190831291341379433
 GameObject:
   m_ObjectHideFlags: 0

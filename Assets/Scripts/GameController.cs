@@ -67,10 +67,14 @@ public class GameController : MonoBehaviour
             if (!this.UI.IsInventoryActive())
             {
                 Time.timeScale = 1;
-            }          
-            Cursor.lockState = CursorLockMode.Locked;
-            this.UI.SetPauseMenuState(false);
-            this.hud.gameObject.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                this.UI.SetPauseMenuState(false);
+                this.hud.gameObject.SetActive(true);
+            }
+            else
+            {
+                this.UI.SetPauseMenuState(false);
+            }
         }
     }
 

@@ -79,7 +79,7 @@ public class InventoryController : MonoBehaviour
         {
             if(item.item.itemName == selectedItem.name)
             {
-                itemName.text = item.item.itemName;
+                itemName.text = item.item.name;
                 itemDescription.text = item.item.description;
                 break;
             }
@@ -91,6 +91,7 @@ public class InventoryController : MonoBehaviour
         if(selectedItem)
         {
             var inv = inventory.Container;
+            var invItems = playerController.GetPlayerInfo().GetInventory();
 
             foreach (var item in inv)
             {
@@ -105,16 +106,37 @@ public class InventoryController : MonoBehaviour
                             item.amount--;
                             var text = selectedItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                             text.text = item.amount.ToString("n0");
+                            
+                            foreach (var item2 in invItems.GetItems())
+                            {
+                                if(item2.GetName() == item.item.itemName)
+                                    item2.amountUsed++;
+                                //{
+                                //    invItems.RemoveItem(item2);
+                                //    break;
+                                //}
+                            }
                         }
                         else if(item.amount == 1)
                         {
-                            inv.Remove(item);
+                            foreach (var item2 in invItems.GetItems())
+                            {
+                                if(item2.GetName() == item.item.itemName)
+                                    item2.amountUsed++;
+                                //{
+                                //    invItems.RemoveItem(item2);
+                                //}
+                            }
+
+                            inv.Remove(item);                            
                             Destroy(selectedItem);
 
                             itemName.text = "";
                             itemDescription.text = "";
                         }
+
                         
+
                         playerController.ChangeHealth(healthItem.restoreHealthValue, true);
 
                         break;

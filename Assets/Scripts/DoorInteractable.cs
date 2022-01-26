@@ -42,7 +42,7 @@ public class DoorInteractable : MonoBehaviour
 
                 }
                 
-                if(item.item.name == "Strange Key" && eastDoor)
+                if(item.item.itemName == "StrangeKey" && eastDoor)
                 {
                     animator.SetTrigger("OpenCloseDoor");
                 }

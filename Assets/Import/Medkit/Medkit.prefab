@@ -121,6 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6128295796104557617}
+  - component: {fileID: 336484765}
+  - component: {fileID: 336484764}
   m_Layer: 0
   m_Name: Medkit
   m_TagString: Untagged
@@ -143,6 +145,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &336484765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694091459927929479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.903862, y: 0.72442245, z: 0.28147888}
+  m_Center: {x: -0.0023765564, y: 0.36783266, z: -0.0023651123}
+--- !u!114 &336484764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694091459927929479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbc92b91a9355c4ea605a7092baee4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemObject: {fileID: 11400000, guid: 7301af1de1f1fd44ca98d21bbdd4d1ed, type: 2}
+  isPickable: 1
+  isWeaponAmmo: 0
+  itemName: First Aid
+  itemID: FirstAid11
 --- !u!1 &4425802238188206994
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 4425802238188206994}
   m_LocalRotation: {x: 0, y: 0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 7485345416019414612}
   m_Father: {fileID: 3459738832032037230}

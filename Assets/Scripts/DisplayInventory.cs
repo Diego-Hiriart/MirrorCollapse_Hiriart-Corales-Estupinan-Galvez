@@ -22,7 +22,7 @@ public class DisplayInventory : MonoBehaviour
     private void Start()
     {
         DeleteDisplayedItems();
-        CreateDisplay();
+        //CreateDisplay();
     }
 
     private void Update()
@@ -46,7 +46,7 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventory.Container[i].item.uiDisplay, Vector3.zero, Quaternion.identity, itemPanel.transform);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            obj.name = inventory.Container[i].item.itemName;
+            obj.name = inventory.Container[i].item.name;
         }
     }
 
