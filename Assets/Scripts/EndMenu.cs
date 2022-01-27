@@ -9,18 +9,11 @@ public class EndMenu : MonoBehaviour
     [SerializeField] Button mainMenu;
     [SerializeField] Button exitButton;
 
-    [SerializeField] LevelController levelController;
+    [SerializeField] MainMenuController mainMenuController;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ContinueGame()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mainMenuController.LoadLastGame();
     }
 
     public void MainMenu()
@@ -28,8 +21,4 @@ public class EndMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }

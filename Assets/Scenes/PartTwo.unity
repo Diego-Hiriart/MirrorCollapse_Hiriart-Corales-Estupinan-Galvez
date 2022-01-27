@@ -5010,6 +5010,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1395024546199579273, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: eastDoor
       value: 1
@@ -5025,6 +5029,10 @@ PrefabInstance:
     - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: westDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547898651632, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7195597276128736694, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7876,7 +7884,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a606bba572ab45947aa6c0db286338f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cf7b5a8c718f8d1498636d6cde67519d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
