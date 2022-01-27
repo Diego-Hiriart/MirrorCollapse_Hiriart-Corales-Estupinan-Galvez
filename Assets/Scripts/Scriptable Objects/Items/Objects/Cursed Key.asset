@@ -16,4 +16,4 @@ MonoBehaviour:
   uiDisplay: {fileID: 5842134377795116400, guid: e2fdfcf66753a2d489394f3d762ea183, type: 3}
   type: 3
   itemName: CursedKey
-  description: I think this key opens the west side door of the house.
+  description: A weird looking key, maybe an antique piece.

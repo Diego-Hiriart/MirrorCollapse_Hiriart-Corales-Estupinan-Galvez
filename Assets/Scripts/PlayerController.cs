@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public InventoryObject inventory;
     [SerializeField] public GameObject bat;
     [SerializeField] public GameObject pistol;
+    [SerializeField] public GameObject hud;
 
     public GameObject ammo;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
+        redScreenImage = hud.transform.GetChild(1).GetComponent<Image>();
         ChangeRedScreenAlpha(player.GetHealth());
     }
 
@@ -54,8 +55,6 @@ public class PlayerController : MonoBehaviour
         float value = 100 - health;
         value /= 100;
         value /= 4;
-        Debug.Log(value);
-        Debug.Log(health);
         redScreenImage.color = new Color(255, 0, 0, value);
     }
     
@@ -152,6 +151,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(impact.collider.tag == "Portal")
             {
+                PrefsKeys.inventory = this.player.GetInventory();
                 impact.transform.GetComponentInParent<MirrorPortal>().ChangeLevel();
             }
         }

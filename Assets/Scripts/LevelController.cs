@@ -34,6 +34,7 @@ public class LevelController : MonoBehaviour
             // spawn player
             this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
             this.playerControl = this.player.GetComponent<PlayerController>();
+            this.playerControl.GetPlayerInfo().SetInventory(PrefsKeys.inventory);
         }
         else
         {

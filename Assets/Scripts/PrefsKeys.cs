@@ -12,4 +12,6 @@ public static class PrefsKeys
     public const string saveFileFormat = "/MirrorCollapseSaveFile";
     public static bool sceneChanged = false;
     public static bool newGame = true;
+
+    public static ItemList inventory = new ItemList(); //Inventory between levels
 }

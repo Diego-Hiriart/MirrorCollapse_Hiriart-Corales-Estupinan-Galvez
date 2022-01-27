@@ -16,5 +16,5 @@ MonoBehaviour:
   uiDisplay: {fileID: 9189127902571527954, guid: ab4bab21575a09543954a23c671a434b, type: 3}
   type: 0
   itemName: Donut
-  description: This donut looks amazing :)
+  description: This donut looks tasty.
   restoreHealthValue: 30
