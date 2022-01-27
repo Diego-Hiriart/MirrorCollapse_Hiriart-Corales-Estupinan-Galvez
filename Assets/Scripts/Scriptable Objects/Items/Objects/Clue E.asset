@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
+  m_Name: Clue E
+  m_EditorClassIdentifier: 
+  id: 0
+  uiDisplay: {fileID: 5842134377795116400, guid: 985124d07a94143428264c89da361bd7, type: 3}
+  type: 3
+  itemName: ClueE
+  description: "While that big monster chased me around it said something about this
+    reflection not being the one. I\u2019m not sure what it meant by that, but I
+    sure hope this is the real world. Still, I must admit I have the feeling that
+    the monster is right, I feel so weird here\u2026 Anyways, I gotta the hell out
+    of here through that broken mirror."
