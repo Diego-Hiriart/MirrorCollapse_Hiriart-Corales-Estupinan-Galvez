@@ -17,7 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PartThree.unity
     guid: 3ae5dc6898543a1439bfa3bae879722c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PartOneOLD.unity
     guid: 8e5c3aff907c6924b97074f60aff7142
+  - enabled: 1
+    path: Assets/Scenes/PartFour.unity
+    guid: 68a9d65c32b97f14c9bf04326d83db5d
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: dcd9ffd121ab82144be647c8401613b6
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 0fb36857d2d060149ba8a2210e30614b
   m_configObjects: {}

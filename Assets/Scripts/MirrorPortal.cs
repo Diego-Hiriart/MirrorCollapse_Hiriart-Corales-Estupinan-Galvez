@@ -24,6 +24,8 @@ public class MirrorPortal : MonoBehaviour
 
     public void ChangeLevel()
     {
+        PrefsKeys.sceneChanged = true;
+        
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);

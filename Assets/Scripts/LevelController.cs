@@ -25,11 +25,15 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ClearInventory();
-
         if (!PrefsKeys.newGame)
         {
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        }
+        else if(PrefsKeys.sceneChanged)
+        {
+            // spawn player
+            this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
+            this.playerControl = this.player.GetComponent<PlayerController>();
         }
         else
         {
@@ -86,6 +90,7 @@ public class LevelController : MonoBehaviour
 
     public void LoadGame()
     {
+        Debug.Log("ENTRO");
         string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         if (File.Exists(filePath))
         {
@@ -137,6 +142,8 @@ public class LevelController : MonoBehaviour
             this.playerControl = this.player.GetComponent<PlayerController>();
             this.playerControl.GetPlayerInfo().SetInventory(save.GetPlayer().GetInventory());
 
+            ClearInventory();
+
             foreach (var item in playerControl.GetPlayerInfo().GetInventory().GetItems())
             {
                 string itemName = item.GetName();
@@ -182,6 +189,7 @@ public class LevelController : MonoBehaviour
 
     private void NewGame()
     {
+        ClearInventory();
         this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
         this.playerControl = this.player.GetComponent<PlayerController>();
     }

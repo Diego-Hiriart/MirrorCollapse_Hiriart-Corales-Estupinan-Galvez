@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
-  m_Name: Clue B
+  m_Name: Monster clue
   m_EditorClassIdentifier: 
   id: 0
   uiDisplay: {fileID: 5842134377795116400, guid: d798c987eae28bd4d9778cc6366f75bf, type: 3}
