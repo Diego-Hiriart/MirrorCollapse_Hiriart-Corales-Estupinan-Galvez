@@ -142,10 +142,14 @@ public class LevelController : MonoBehaviour
                 string itemName = item.GetName();
                 int amount = item.GetIds().Count;
 
+                Debug.Log(itemName);
+                Debug.Log("cantidad de lista: "+playerControl.GetPlayerInfo().GetInventory().GetItems().Count);
+
                 foreach (var item2 in inventory2.Container)
                 {
                     if(item2.item.itemName == itemName)
                     {
+                        Debug.Log(item2.item.itemName);
                         if (!item.IsWeaponAmmo())//Normally add to inventory if it is not ammo
                         {
                             var newAmount = item.amountUsed;

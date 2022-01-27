@@ -17,5 +17,5 @@ MonoBehaviour:
   type: 2
   itemName: GunAmmo
   description: Caliber .44 ammo for the gun I got somewhere in my house.
-  quantity: 0
+  quantity: 15
   maxQuantity: 15
