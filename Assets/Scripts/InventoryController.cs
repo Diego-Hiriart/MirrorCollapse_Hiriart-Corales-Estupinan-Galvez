@@ -68,7 +68,17 @@ public class InventoryController : MonoBehaviour
 
     private void OpenItems()
     {
-
+        foreach (var item in inventory.Container)
+        {
+            if(item.item is AmmoObject)
+            {
+                
+            }
+            else
+            {
+                
+            }
+        }
     }
 
     public void SetHealthUI(float newHp)

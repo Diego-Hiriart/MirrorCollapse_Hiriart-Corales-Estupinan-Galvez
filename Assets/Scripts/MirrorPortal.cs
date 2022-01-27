@@ -7,6 +7,8 @@ public class MirrorPortal : MonoBehaviour
 {
     [SerializeField] bool isSecond;
     [SerializeField] bool isThird;
+    [SerializeField] bool isBroken;
+    [SerializeField] bool isNormal;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,14 @@ public class MirrorPortal : MonoBehaviour
             SceneManager.LoadScene(3);
         }
         else if(SceneManager.GetActiveScene().buildIndex == 3 && isThird)
+        {
+            SceneManager.LoadScene(4);
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 4 && isNormal)
+        {
+            SceneManager.LoadScene(4);
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 4 && isBroken)
         {
             SceneManager.LoadScene(4);
         }

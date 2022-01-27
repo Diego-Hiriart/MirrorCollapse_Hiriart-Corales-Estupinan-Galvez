@@ -85,8 +85,8 @@ public class GunSystem : MonoBehaviour
         {
             Debug.Log(rayHit.collider.name);
 
-            if (rayHit.collider.CompareTag("Enemy"))
-                rayHit.collider.GetComponent<EnemyController>().ChangeHealth(damage, false);
+            if (rayHit.collider.CompareTag("Hitbox"))
+                rayHit.collider.GetComponentInParent<EnemyController>().ChangeHealth(damage, false);
         }
 
         foreach (var item in inventory.Container)
@@ -95,6 +95,7 @@ public class GunSystem : MonoBehaviour
             {
                 var ammo = item.item as AmmoObject;
                 ammo.quantity--;
+                
                 break;
             }
         }
