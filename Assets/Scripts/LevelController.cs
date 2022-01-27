@@ -65,7 +65,7 @@ public class LevelController : MonoBehaviour
         var bf = new BinaryFormatter();
         var filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         //Debug.Log(filePath);
-       
+        Debug.Log("Saved ammo: "+save.GetPlayer().GetAmmoItem().GetAmmoAmount());       
         try
         {
             var fs = File.Create(filePath);

@@ -20,6 +20,7 @@ public class ItemController : MonoBehaviour
         this.item = new Item(isWeaponAmmo, itemName, isPickable, this.itemID);
         if (this.isWeaponAmmo)
         {
+            Debug.Log("Ammo: "+this.item.GetAmmoAmount());
             (this.itemObject as AmmoObject).quantity = ammoQuantity;
         }
         this.level = GetComponentInParent<LevelController>();
