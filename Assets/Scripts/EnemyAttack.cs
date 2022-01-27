@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     GameObject player;
     bool isAttacking;
+    [SerializeField] float atkDamage;
 
     // Update is called once per frame
     void Update()
@@ -40,7 +41,7 @@ public class EnemyAttack : MonoBehaviour
     {
         while(isAttacking)
         {
-            player.GetComponent<PlayerController>().ChangeHealth(20, false);
+            player.GetComponent<PlayerController>().ChangeHealth(atkDamage, false);
 
             yield return new WaitForSeconds(2f);
         }

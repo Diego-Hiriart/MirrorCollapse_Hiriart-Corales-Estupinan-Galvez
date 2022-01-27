@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool dropsItem;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] float health = 70;
+    [SerializeField] bool isBoss;
 
     bool isChasing;
 
@@ -60,6 +61,15 @@ public class EnemyController : MonoBehaviour
             {
                 itemPrefab.transform.position = this.transform.position;
                 itemPrefab.SetActive(true);
+            }
+            if(isBoss)
+            {
+                var portals = GameObject.FindWithTag("Portals");
+                
+                foreach(Transform child in portals.transform)
+                {
+                    child.gameObject.SetActive(true);
+                } 
             }
 
             Destroy(this.gameObject);

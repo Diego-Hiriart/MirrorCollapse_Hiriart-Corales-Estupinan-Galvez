@@ -38,11 +38,11 @@ public class MirrorPortal : MonoBehaviour
         }
         else if(SceneManager.GetActiveScene().buildIndex == 4 && isNormal)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
         else if(SceneManager.GetActiveScene().buildIndex == 4 && isBroken)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(6);
         }
     }
 }

@@ -3410,6 +3410,10 @@ PrefabInstance:
       propertyPath: itemPrefab
       value: 
       objectReference: {fileID: 1198125370}
+    - target: {fileID: 9197381716239745543, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
+      propertyPath: atkDamage
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
 --- !u!4 &1067893414 stripped
@@ -4779,6 +4783,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: eastDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: westDoor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7228661012180899431, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7733,6 +7753,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
   level: PartThree
   levelStartPosition: {x: 144.7015, y: 2.25, z: 141.3022}
+  gameControl: {fileID: 7496396093345501596}
 --- !u!4 &6143943796001400953
 Transform:
   m_ObjectHideFlags: 0

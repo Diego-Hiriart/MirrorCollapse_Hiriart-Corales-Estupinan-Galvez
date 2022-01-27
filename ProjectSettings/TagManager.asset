@@ -16,6 +16,7 @@ TagManager:
   - RedScreen
   - EndMenu
   - Hitbox
+  - Portals
   layers:
   - Default
   - TransparentFX

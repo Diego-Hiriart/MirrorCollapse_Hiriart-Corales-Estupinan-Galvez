@@ -4915,6 +4915,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: eastDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: westDoor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7228661012180899431, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -7733,6 +7749,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
   level: PartTwo
   levelStartPosition: {x: 170.7, y: 3.25, z: 47.55}
+  gameControl: {fileID: 7496396093345501596}
 --- !u!4 &6143943796001400953
 Transform:
   m_ObjectHideFlags: 0
