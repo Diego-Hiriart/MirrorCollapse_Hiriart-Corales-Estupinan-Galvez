@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 0
   uiDisplay: {fileID: 550316681758476930, guid: 4ffb13078987bda4fb3260cd73208620, type: 3}
   type: 2
-  itemName: Gun Ammo
+  itemName: GunAmmo
   description: Caliber .44 ammo for the gun I got somewhere in my house.
   quantity: 15
+  maxQuantity: 15

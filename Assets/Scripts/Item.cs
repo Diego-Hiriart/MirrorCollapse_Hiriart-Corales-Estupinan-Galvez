@@ -12,6 +12,7 @@ public class Item
     private bool pickable;
     private List<string> ids = new List<String>();//Name+level int + item instance, example: Donut11
     private bool health;
+    public int amountUsed = 0;
 
     public Item(bool isWeaponAmmo, string name, bool isPickable)
     {

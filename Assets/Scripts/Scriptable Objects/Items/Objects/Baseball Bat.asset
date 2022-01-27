@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   uiDisplay: {fileID: 5842134377795116400, guid: 502dddfd9a80de644813864a0a336e13, type: 3}
   type: 1
-  itemName: Baseball Bat
+  itemName: BaseballBat
   description: I bought this baseball bat a while ago... Even though I hate baseball.
   atkDamage: 20
   isGun: 0

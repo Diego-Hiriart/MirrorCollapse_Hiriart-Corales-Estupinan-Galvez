@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 431604284}
   m_Layer: 0
   m_Name: Light_Switch
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 8351484209974174684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6161949126612749271}
   m_Father: {fileID: 0}
@@ -715,5 +715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d859c5ae25b38704990d3fc038bbce86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switcher: {fileID: 0}
-  lamps: []
+  switcher: {fileID: 7330273591272250330}
+  lamps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 0
   uiDisplay: {fileID: 5842134377795116400, guid: fa947a87630b75e49b345ad2ae3114ee, type: 3}
   type: 3
-  itemName: Strange Key
+  itemName: StrangeKey
   description: I found this key while I was in the house, it has an odd look to it,

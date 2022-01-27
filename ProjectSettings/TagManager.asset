@@ -13,6 +13,8 @@ TagManager:
   - Key
   - Enemy
   - Ammo
+  - RedScreen
+  - EndMenu
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

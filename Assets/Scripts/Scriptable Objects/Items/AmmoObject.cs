@@ -6,9 +6,11 @@ using UnityEngine;
 public class AmmoObject : ItemObject
 {
     public float quantity;
+    public float maxQuantity;
 
     public void Awake()
     {
         type = ItemType.Ammo;
+        quantity = maxQuantity;
     }
 }

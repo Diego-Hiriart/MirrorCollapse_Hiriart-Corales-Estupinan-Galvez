@@ -7,9 +7,14 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private UIController UI;
     [SerializeField] private Canvas hud;
-    [SerializeField] private PlayerController player;
+    private PlayerController player;
     [SerializeField] private AudioMixer effectsMixer;
     [SerializeField] private AudioMixer musicMixer;
+
+    [SerializeField] GameObject endMenu;
+
+    int count;
+    bool stopChecking;
 
     private void Awake()
     {
@@ -25,6 +30,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(count == 0)
+        {
+            player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            count++;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             this.OpenClosePauseMenu();
@@ -33,6 +44,22 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             this.OpenCloseInventory();
+        }
+
+        if(!stopChecking)
+        {
+            ActiveEndMenu();
+        }
+    }
+
+    public void ActiveEndMenu()
+    {
+        if(player.GetPlayerInfo().GetHealth() <= 0)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            endMenu.SetActive(true);
+            stopChecking = true;
         }
     }
 
@@ -66,10 +93,14 @@ public class GameController : MonoBehaviour
             if (!this.UI.IsInventoryActive())
             {
                 Time.timeScale = 1;
-            }          
-            Cursor.lockState = CursorLockMode.Locked;
-            this.UI.SetPauseMenuState(false);
-            this.hud.gameObject.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                this.UI.SetPauseMenuState(false);
+                this.hud.gameObject.SetActive(true);
+            }
+            else
+            {
+                this.UI.SetPauseMenuState(false);
+            }
         }
     }
 

@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 0
   uiDisplay: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
   type: 0
-  itemName: First Aid
+  itemName: FirstAid
   description: A first aid I found etc
   restoreHealthValue: 100

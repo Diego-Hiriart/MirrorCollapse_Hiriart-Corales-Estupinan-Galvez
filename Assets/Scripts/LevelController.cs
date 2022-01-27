@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     public InventoryObject inventory;
+    public InventoryObject inventory2;
 
     [SerializeField] private GameObject playerPrefab;
     private GameObject player;
@@ -22,6 +23,8 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ClearInventory();
+
         if (!PrefsKeys.newGame)
         {
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
@@ -30,8 +33,6 @@ public class LevelController : MonoBehaviour
         {
             NewGame();
         }
-
-        ClearInventory();
     }
 
     // Update is called once per frame
@@ -96,7 +97,7 @@ public class LevelController : MonoBehaviour
                 }
             }
             foreach (ItemController item in toBeDeleted)
-            {
+            {                
                 Destroy(item.gameObject);
             }
             toBeDeleted.Clear();//Reset list to use with enemies
@@ -124,6 +125,28 @@ public class LevelController : MonoBehaviour
             this.player = Instantiate(playerPrefab, new Vector3(pos[0], pos[1], pos[2]), new Quaternion(rot[0], rot[1], rot[2], rot[3]));
             this.playerControl = this.player.GetComponent<PlayerController>();
             this.playerControl.GetPlayerInfo().SetInventory(save.GetPlayer().GetInventory());
+
+            foreach (var item in playerControl.GetPlayerInfo().GetInventory().GetItems())
+            {
+                string itemName = item.GetName();
+                int amount = item.GetIds().Count;
+
+                foreach (var item2 in inventory2.Container)
+                {
+                    if(item2.item.itemName == itemName)
+                    {
+                        var newAmount = item.amountUsed;
+                        amount -= newAmount;
+
+                        if(amount > 0)
+                        {
+                            inventory.AddItem(item2.item, amount);
+                            break;
+                        }
+                    }
+                }
+            }
+
             this.playerControl.GetPlayerInfo().SetHealth(save.GetPlayer().GetHealth());
         }
         else

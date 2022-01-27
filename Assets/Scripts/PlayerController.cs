@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public InventoryObject inventory;
-    [SerializeField] GameObject bat;
-    [SerializeField] GameObject pistol;
+    [SerializeField] public GameObject bat;
+    [SerializeField] public GameObject pistol;
+
+    public GameObject ammo;
 
     private PlayerCharacter player;
+
+    Image redScreenImage;
 
     float maxHealth;
     float minHealth;
@@ -28,7 +33,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
+        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
+        ChangeRedScreenAlpha(player.GetHealth());
     }
 
     // Update is called once per frame
@@ -41,6 +47,16 @@ public class PlayerController : MonoBehaviour
                 ObjectInteract();
             }
         }
+    }
+
+    public void ChangeRedScreenAlpha(float health)
+    {
+        float value = 100 - health;
+        value /= 100;
+        value /= 4;
+        Debug.Log(value);
+        Debug.Log(health);
+        redScreenImage.color = new Color(255, 0, 0, value);
     }
     
     public void EquipWeapon(bool isGun)
@@ -68,7 +84,7 @@ public class PlayerController : MonoBehaviour
             this.player.SetHealth(this.player.GetHealth() - health > minHealth ? this.player.GetHealth() - health : minHealth);
         }
 
-        Debug.Log("Health: " + this.player.GetHealth());
+        ChangeRedScreenAlpha(player.GetHealth());
     }
 
     public PlayerCharacter GetPlayerInfo()
