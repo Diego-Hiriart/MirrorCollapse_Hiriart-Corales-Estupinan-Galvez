@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private string enemyName;
     [SerializeField] bool dropsItem;
     [SerializeField] GameObject itemPrefab;
+    [SerializeField] float health = 70;
+    [SerializeField] bool isBoss;
 
     bool isChasing;
 
@@ -22,7 +24,7 @@ public class EnemyController : MonoBehaviour
         this.enemy = new Enemy(this.enemyName, this.enemyID);
         enemyAgent = this.GetComponent<NavMeshAgent>();
         this.level = GetComponentInParent<LevelController>();
-        this.enemy.SetHealth(70);
+        this.enemy.SetHealth(health);
         this.AddThisToLevel();
     }
 
@@ -57,7 +59,17 @@ public class EnemyController : MonoBehaviour
 
             if(dropsItem)
             {
-                Instantiate(itemPrefab, this.transform.position, this.transform.rotation);
+                itemPrefab.transform.position = this.transform.position;
+                itemPrefab.SetActive(true);
+            }
+            if(isBoss)
+            {
+                var portals = GameObject.FindWithTag("Portals");
+                
+                foreach(Transform child in portals.transform)
+                {
+                    child.gameObject.SetActive(true);
+                } 
             }
 
             Destroy(this.gameObject);

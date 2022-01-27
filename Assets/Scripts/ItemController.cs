@@ -9,8 +9,7 @@ public class ItemController : MonoBehaviour
     private Item item;
     [SerializeField] private bool isPickable;
     [SerializeField] private bool isWeaponAmmo;
-    public float ammoQuantity;
-    public float ammoMaxQuantity;
+    public float ammoQuantity = 15;
     [SerializeField] private string itemName;
     private LevelController level;
     [SerializeField] private string itemID;
@@ -19,6 +18,11 @@ public class ItemController : MonoBehaviour
     void Start()
     {
         this.item = new Item(isWeaponAmmo, itemName, isPickable, this.itemID);
+        if (this.isWeaponAmmo)
+        {
+            Debug.Log("Ammo: "+this.item.GetAmmoAmount());
+            (this.itemObject as AmmoObject).quantity = ammoQuantity;
+        }
         this.level = GetComponentInParent<LevelController>();
         this.AddThisToLevel();
     }

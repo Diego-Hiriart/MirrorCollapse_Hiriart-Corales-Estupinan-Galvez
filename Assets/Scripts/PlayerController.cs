@@ -107,9 +107,35 @@ public class PlayerController : MonoBehaviour
             {
                 if (item.GetItem().IsPickable())
                 {
-                    item.PickItemUp();
-                    inventory.AddItem(item.itemObject, 1);
-                    Destroy(item.gameObject);
+                    if (!item.GetItem().IsWeaponAmmo())
+                    {
+                        item.PickItemUp();
+                        inventory.AddItem(item.itemObject, 1);
+                        Destroy(item.gameObject);
+                    }
+                    else
+                    {
+                        bool hasAmmo = false;
+                        foreach (var itemContainer in inventory.Container)
+                        {
+                            if (itemContainer.item is AmmoObject)//If theres already ammo in the inventory, just add to it
+                            {
+                                item.PickItemUp();
+                                this.player.GetAmmoItem().SetAmmoAmount(item.GetItem().GetAmmoAmount()+ (int)item.ammoQuantity);
+                                (itemContainer.item as AmmoObject).quantity += item.ammoQuantity;
+                                Destroy(item.gameObject);
+                                hasAmmo = true;
+                                break;
+                            }
+                        }
+                        if (!hasAmmo)//If theres no ammo already, add new AmmoObject
+                        {
+                            item.PickItemUp();
+                            this.player.GetAmmoItem().SetAmmoAmount(item.GetItem().GetAmmoAmount() + (int)item.ammoQuantity);
+                            inventory.AddItem(item.itemObject, 1);
+                            Destroy(item.gameObject);
+                        }
+                    }                 
                 }
             }
             else if (impact.collider.TryGetComponent<SavingController>(out saveMirror))

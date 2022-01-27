@@ -121,4 +121,12 @@ public class GameController : MonoBehaviour
             this.hud.gameObject.SetActive(true);
         }        
     }
+
+    public IEnumerator ActivateSavedGameNotification()
+    {
+        this.hud.GetComponent<HUDController>().ActivateDeactivateSaveNotificaction(true);
+        //Show message for 3 seconds
+        yield return new WaitForSeconds(3f);
+        this.hud.GetComponent<HUDController>().ActivateDeactivateSaveNotificaction(false);
+    }
 }

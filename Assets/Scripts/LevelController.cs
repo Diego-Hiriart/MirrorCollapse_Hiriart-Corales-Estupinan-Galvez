@@ -18,6 +18,8 @@ public class LevelController : MonoBehaviour
     private EnemyList deadEnemies = new EnemyList();
     [SerializeField] private string level;
     [SerializeField] Vector3 levelStartPosition;
+    [SerializeField]
+    private GameController gameControl;
 
 
     // Start is called before the first frame update
@@ -62,10 +64,19 @@ public class LevelController : MonoBehaviour
         //Save as binary to avoid cheating
         var bf = new BinaryFormatter();
         var filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
-        Debug.Log(filePath);
-
-        var fs = File.Create(filePath);
-        bf.Serialize(fs, save);
+        //Debug.Log(filePath);
+        Debug.Log("Saved ammo: "+save.GetPlayer().GetAmmoItem().GetAmmoAmount());       
+        try
+        {
+            var fs = File.Create(filePath);
+            bf.Serialize(fs, save);
+            StartCoroutine(this.gameControl.ActivateSavedGameNotification());//Show saved game notification
+        }
+        catch (IOException fileException)
+        {
+            //This is here in case the player presses the save button too many times, a file error ocurrs because it cant be accessed
+        }
+        
     }
 
     private SaveData CreateSaveData()
@@ -135,14 +146,24 @@ public class LevelController : MonoBehaviour
                 {
                     if(item2.item.itemName == itemName)
                     {
-                        var newAmount = item.amountUsed;
-                        amount -= newAmount;
-
-                        if(amount > 0)
+                        if (!item.IsWeaponAmmo())//Normally add to inventory if it is not ammo
                         {
-                            inventory.AddItem(item2.item, amount);
+                            var newAmount = item.amountUsed;
+                            amount -= newAmount;
+
+                            if (amount > 0)
+                            {
+                                inventory.AddItem(item2.item, amount);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            (item2.item as AmmoObject).quantity = item.GetAmmoAmount();
+                            inventory.AddItem(item2.item, 1);
                             break;
                         }
+                        
                     }
                 }
             }

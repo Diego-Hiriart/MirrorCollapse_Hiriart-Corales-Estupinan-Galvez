@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public class Item
 {
     private bool weaponAmmo;
+    private int ammoAmount;
     private string name;
     private bool pickable;
     private List<string> ids = new List<String>();//Name+level int + item instance, example: Donut11
@@ -41,6 +42,16 @@ public class Item
         return this.weaponAmmo;
     }
 
+    public void SetAmmoAmount(int amount)
+    {
+        this.ammoAmount = amount;
+    }
+
+    public int GetAmmoAmount()
+    {
+        return this.ammoAmount;
+    }
+
     public bool IsPickable()
     {
         return this.pickable;
@@ -48,6 +59,12 @@ public class Item
 
     public void AddOne(string newID)
     {
-        this.ids.Add(newID);
+        this.ids.Add(newID);  
+    }
+
+    //Add or substract ammo
+    public void ChangeAmmo(int amount)
+    {
+        this.SetAmmoAmount(this.GetAmmoAmount()+amount);
     }
 }
