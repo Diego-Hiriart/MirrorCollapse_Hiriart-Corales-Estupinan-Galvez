@@ -95,6 +95,7 @@ public class GunSystem : MonoBehaviour
             {
                 var ammo = item.item as AmmoObject;
                 ammo.quantity--;
+
                 break;
             }
         }
