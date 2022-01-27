@@ -50,5 +50,18 @@ public class PlayerCharacter : Character
     {
         return this.maxHealth;
     }
+
+    public Item GetAmmoItem()
+    {
+        foreach (Item item in this.inventory.GetItems())
+        {
+            if (item.IsWeaponAmmo())
+            {
+                return item;
+                break;
+            }
+        }
+        return null;//If there is no ammo in the inventory
+    }
 }
 
