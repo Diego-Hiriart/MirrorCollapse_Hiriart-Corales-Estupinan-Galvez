@@ -140,6 +140,7 @@ MonoBehaviour:
   dropsItem: 0
   itemPrefab: {fileID: 7437286993422567894, guid: c98219c4f3ca2fa46ad9687522434f04, type: 3}
   health: 70
+  isBoss: 0
 --- !u!135 &985633123024345273
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10216983bf06b0149bfef8f660746869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkDamage: 20
 --- !u!1 &7560577249300642293
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,7 +74,7 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("PartOne");      
     }
 
-    private void LoadLastGame()
+    public void LoadLastGame()
     {
         string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         if (File.Exists(filePath))

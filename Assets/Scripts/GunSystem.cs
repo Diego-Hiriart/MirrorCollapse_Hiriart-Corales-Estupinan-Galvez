@@ -95,7 +95,7 @@ public class GunSystem : MonoBehaviour
             {
                 var ammo = item.item as AmmoObject;
                 ammo.quantity--;
-                this.GetComponentInParent<PlayerController>().GetPlayerInfo().GetAmmoItem().SetAmmoAmount((int)ammo.quantity);
+                this.GetComponentInParent<PlayerController>().GetPlayerInfo().GetAmmoItem().SetAmmoAmount((int)ammo.quantity);              
                 break;
             }
         }

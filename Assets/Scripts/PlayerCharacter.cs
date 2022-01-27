@@ -58,7 +58,6 @@ public class PlayerCharacter : Character
             if (item.IsWeaponAmmo())
             {
                 return item;
-                break;
             }
         }
         return null;//If there is no ammo in the inventory

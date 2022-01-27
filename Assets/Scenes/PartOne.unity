@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5599,7 +5599,6 @@ MonoBehaviour:
   isPickable: 1
   isWeaponAmmo: 0
   ammoQuantity: 0
-  ammoMaxQuantity: 0
   itemName: BaseballBat
   itemID: BaseballBat11
 --- !u!4 &1656263113 stripped
@@ -5814,7 +5813,6 @@ MonoBehaviour:
   isPickable: 1
   isWeaponAmmo: 0
   ammoQuantity: 15
-  ammoMaxQuantity: 15
   itemName: Pistol
   itemID: Pistol11
 --- !u!65 &1675589289
@@ -7398,6 +7396,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6453496334681644288, guid: c4374d285db077540a1a744ab3b10d6b, type: 3}
   m_PrefabInstance: {fileID: 2076544839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2084684079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084684083}
+  - component: {fileID: 2084684082}
+  - component: {fileID: 2084684081}
+  - component: {fileID: 2084684080}
+  m_Layer: 0
+  m_Name: Pista11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2084684080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084684079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2084684081
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084684079}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2084684082
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084684079}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2084684083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084684079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68.76459, y: 0.2756157, z: 107.44717}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2090417631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7911,6 +8004,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9197381716239745543, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
+      propertyPath: atkDamage
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
 --- !u!4 &2144274846 stripped
@@ -8217,7 +8314,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a606bba572ab45947aa6c0db286338f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8c656ab28ab0e6d44be9d7dcc31ba65c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8432,6 +8529,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1395024546199579273, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: westDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395024547898651632, guid: fa440202295d0574aab1ef64363d75db, type: 3}
+      propertyPath: needsKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7228661012180899431, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -8605,10 +8718,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15508341, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_Name
+      value: ContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 15508343, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGame
+      objectReference: {fileID: 0}
     - target: {fileID: 386319865, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: levelController
       value: 
       objectReference: {fileID: 6143943796001400952}
+    - target: {fileID: 386319865, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: mainMenuController
+      value: 
+      objectReference: {fileID: 5442102337152956705, guid: b53edb4209331294fa41f9c7d53f1ea1, type: 3}
+    - target: {fileID: 840388645, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_text
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429458736, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_text
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576670369, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_Name
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576670371, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8566155750503561046, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: gameController
       value: 
