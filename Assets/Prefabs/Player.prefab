@@ -431,6 +431,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7190831291341379436}
     m_Modifications:
+    - target: {fileID: 1949387464653817211, guid: 93192cef3d127b640b5b680358aca004, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
     - target: {fileID: 2635481424106705524, guid: 93192cef3d127b640b5b680358aca004, type: 3}
       propertyPath: m_Name
       value: Pistol
