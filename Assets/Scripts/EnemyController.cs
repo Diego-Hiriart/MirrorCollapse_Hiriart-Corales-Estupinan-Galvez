@@ -15,7 +15,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject itemPrefab;
     [SerializeField] float health = 70;
     [SerializeField] bool isBoss;
-
+    [SerializeField] bool hasClue;
+    [SerializeField] GameObject clue;
+    
     bool isChasing;
 
     // Start is called before the first frame update
@@ -53,6 +55,8 @@ public class EnemyController : MonoBehaviour
             this.enemy.SetHealth(this.enemy.GetHealth() - health > 0 ? this.enemy.GetHealth() - health : 0);
         }
 
+        Debug.Log(this.enemy.GetHealth());
+
         if (this.enemy.GetHealth() <= 0)
         {
             this.level.AddDefeatedEnemy(this.enemy);
@@ -70,6 +74,10 @@ public class EnemyController : MonoBehaviour
                 {
                     child.gameObject.SetActive(true);
                 } 
+            }
+            if(hasClue)
+            {
+                clue.SetActive(true);
             }
 
             Destroy(this.gameObject);

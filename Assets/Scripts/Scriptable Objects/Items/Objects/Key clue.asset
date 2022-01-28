@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
-  m_Name: Clue
+  m_Name: Key clue
   m_EditorClassIdentifier: 
   id: 0
-  uiDisplay: {fileID: 550316681758476930, guid: 4ffb13078987bda4fb3260cd73208620, type: 3}
+  uiDisplay: {fileID: 5842134377795116400, guid: 716399f5f99b2844cadc6c52ff278b81, type: 3}
   type: 3
-  itemName: ClueA
+  itemName: ClueD
   description: "I have to go out there again and get the key that I dropped near
-    one of the corners of the metal fence. If I\u2019m not wrong, should open of
-    the rooms that has a brand-new mirror. I can only hope that the mirror takes
-    me back to that nice place again\u2026 if the ghosts kill me and someone finds
-    this, GET THE KEY AND GET THE HELL OUTTA HERE!"
+    one of the corners of that metal fence. If I\u2019m not wrong, it should open
+    of the rooms that has a brand-new mirror. I can only hope that mirror takes me
+    back to that nice place again\u2026 if the ghosts kill me and someone finds this,
+    GET THE KEY AND GET THE HELL OUTTA HERE!"

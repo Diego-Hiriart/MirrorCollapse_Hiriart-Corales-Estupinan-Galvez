@@ -16,5 +16,5 @@ MonoBehaviour:
   uiDisplay: {fileID: 7861831390462510866, guid: 5fa0bb70d570bcc4280433216069d2f7, type: 3}
   type: 0
   itemName: FirstAid
-  description: A first aid I found etc
+  description: This first aid kit seems really useful.
   restoreHealthValue: 100

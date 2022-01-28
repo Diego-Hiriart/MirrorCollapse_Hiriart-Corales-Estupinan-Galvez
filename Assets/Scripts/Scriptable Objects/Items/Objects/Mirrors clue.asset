@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
+  m_Name: Mirrors clue
+  m_EditorClassIdentifier: 
+  id: 0
+  uiDisplay: {fileID: 5842134377795116400, guid: 60356bf0fa0af6c47adacdb7502523cc, type: 3}
+  type: 3
+  itemName: ClueA
+  description: "I don\u2019t even know how I got here, but judging by the stuff laying
+    around, others have been here before. I read on someone\u2019s diary that apparently
+    mirrors here either store your reflection or transport you between worlds. This
+    place seems fine, there\u2019s something outside though, and I can\u2019t shake
+    off the sensation that this feels like a dream."

@@ -10,6 +10,8 @@ public class MirrorPortal : MonoBehaviour
     [SerializeField] bool isBroken;
     [SerializeField] bool isNormal;
 
+    [SerializeField] LevelController levelController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class MirrorPortal : MonoBehaviour
 
     public void ChangeLevel()
     {
+        PrefsKeys.sceneChanged = true;
+        
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);

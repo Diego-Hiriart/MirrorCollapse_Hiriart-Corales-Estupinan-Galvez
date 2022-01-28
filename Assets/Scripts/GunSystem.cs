@@ -83,8 +83,6 @@ public class GunSystem : MonoBehaviour
         //RayCast
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
-            Debug.Log(rayHit.collider.name);
-
             if (rayHit.collider.CompareTag("Hitbox"))
                 rayHit.collider.GetComponentInParent<EnemyController>().ChangeHealth(damage, false);
         }
@@ -95,7 +93,9 @@ public class GunSystem : MonoBehaviour
             {
                 var ammo = item.item as AmmoObject;
                 ammo.quantity--;
-                this.GetComponentInParent<PlayerController>().GetPlayerInfo().GetAmmoItem().SetAmmoAmount((int)ammo.quantity);              
+                Debug.Log(this.GetComponentInParent<PlayerController>().GetPlayerInfo());
+                Debug.Log(this.GetComponentInParent<PlayerController>().GetPlayerInfo().GetAmmoItem());
+                this.GetComponentInParent<PlayerController>().GetPlayerInfo().GetAmmoItem().SetAmmoAmount((int)ammo.quantity);
                 break;
             }
         }

@@ -25,11 +25,16 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ClearInventory();
-
         if (!PrefsKeys.newGame)
         {
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
+        }
+        else if(PrefsKeys.sceneChanged)
+        {
+            // spawn player
+            this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
+            this.playerControl = this.player.GetComponent<PlayerController>();
+            this.playerControl.GetPlayerInfo().SetInventory(PrefsKeys.inventory);
         }
         else
         {
@@ -65,7 +70,7 @@ public class LevelController : MonoBehaviour
         var bf = new BinaryFormatter();
         var filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         //Debug.Log(filePath);
-        Debug.Log("Saved ammo: "+save.GetPlayer().GetAmmoItem().GetAmmoAmount());       
+        //Debug.Log("Saved ammo: "+save.GetPlayer().GetAmmoItem().GetAmmoAmount());       
         try
         {
             var fs = File.Create(filePath);
@@ -86,6 +91,7 @@ public class LevelController : MonoBehaviour
 
     public void LoadGame()
     {
+        Debug.Log("ENTRO");
         string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         if (File.Exists(filePath))
         {
@@ -137,15 +143,21 @@ public class LevelController : MonoBehaviour
             this.playerControl = this.player.GetComponent<PlayerController>();
             this.playerControl.GetPlayerInfo().SetInventory(save.GetPlayer().GetInventory());
 
+            ClearInventory();
+
             foreach (var item in playerControl.GetPlayerInfo().GetInventory().GetItems())
             {
                 string itemName = item.GetName();
                 int amount = item.GetIds().Count;
 
+                Debug.Log(itemName);
+                Debug.Log("cantidad de lista: "+playerControl.GetPlayerInfo().GetInventory().GetItems().Count);
+
                 foreach (var item2 in inventory2.Container)
                 {
                     if(item2.item.itemName == itemName)
                     {
+                        Debug.Log(item2.item.itemName);
                         if (!item.IsWeaponAmmo())//Normally add to inventory if it is not ammo
                         {
                             var newAmount = item.amountUsed;
@@ -178,6 +190,7 @@ public class LevelController : MonoBehaviour
 
     private void NewGame()
     {
+        ClearInventory();
         this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
         this.playerControl = this.player.GetComponent<PlayerController>();
     }
