@@ -34,11 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex != 5 && SceneManager.GetActiveScene().buildIndex != 6)
-        {
-            redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
-            ChangeRedScreenAlpha(player.GetHealth());
-        }
+        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
+        ChangeRedScreenAlpha(player.GetHealth());
     }
 
     // Update is called once per frame
