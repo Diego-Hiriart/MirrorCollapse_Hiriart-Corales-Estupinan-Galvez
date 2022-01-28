@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        redScreenImage = hud.transform.GetChild(1).GetComponent<Image>();
+        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
+        Debug.Log(redScreenImage.name);
         ChangeRedScreenAlpha(player.GetHealth());
     }
 
@@ -52,9 +53,12 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeRedScreenAlpha(float health)
     {
+        Debug.Log(health);
+
         float value = 100 - health;
         value /= 100;
         value /= 4;
+        Debug.Log(value);
         redScreenImage.color = new Color(255, 0, 0, value);
     }
     
