@@ -15,8 +15,14 @@ public class Credits : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelController.SaveGame();
+        StartCoroutine(SaveGame());
         StartCoroutine(StartCredits());
+    }
+
+    IEnumerator SaveGame()
+    {
+        yield return new WaitForSeconds(0.1f);
+        levelController.SaveGame();
     }
 
     // Update is called once per frame

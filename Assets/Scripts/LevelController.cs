@@ -18,12 +18,11 @@ public class LevelController : MonoBehaviour
     private EnemyList deadEnemies = new EnemyList();
     [SerializeField] private string level;
     [SerializeField] Vector3 levelStartPosition;
-    [SerializeField]
-    private GameController gameControl;
+    [SerializeField] private GameController gameControl;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (!PrefsKeys.newGame)
         {
@@ -33,11 +32,10 @@ public class LevelController : MonoBehaviour
         else if(PrefsKeys.sceneChanged)
         {
             // spawn player
+            Debug.Log("AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
             this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
             this.playerControl = this.player.GetComponent<PlayerController>();
-            Debug.Log("null "+playerControl);
             this.playerControl.GetPlayerInfo().SetInventory(PrefsKeys.inventory);
-            Debug.Log("null "+playerControl.GetPlayerInfo());
         }
         else if(PrefsKeys.newGame)
         {
@@ -90,8 +88,9 @@ public class LevelController : MonoBehaviour
 
     private SaveData CreateSaveData()
     {
-        Debug.Log("playerinfo "+this.playerControl.GetPlayerInfo());
-        Debug.Log("inventory "+this.playerControl.GetPlayerInfo().GetInventory());
+        Debug.Log(playerControl);
+        Debug.Log(playerControl.GetPlayerInfo());
+        Debug.Log(playerControl.GetPlayerInfo().GetInventory());
         return new SaveData(this.level, this.playerControl.GetPlayerInfo(), this.playerControl.GetPlayerInfo().GetInventory(), this.deadEnemies);
     }
 
