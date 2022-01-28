@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8311,7 +8311,7 @@ MonoBehaviour:
   inventory2: {fileID: 11400000, guid: 024f3347c1e3a324693398f09dd4f639, type: 2}
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
   level: PartOne
-  levelStartPosition: {x: 71.12, y: 2.3, z: 111.13}
+  levelStartPosition: {x: 79, y: 2.3, z: 127}
   gameControl: {fileID: 7496396093345501596}
 --- !u!4 &6143943796001400953
 Transform:
@@ -8428,11 +8428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: needsKey
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: westDoor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1395024547898651632, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: needsKey
