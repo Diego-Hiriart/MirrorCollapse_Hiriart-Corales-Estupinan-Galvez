@@ -1451,6 +1451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 703396719}
     m_Modifications:
+    - target: {fileID: 363988694, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3872987648651289930, guid: 689036ab5267e6f49a5e405d6e60d1af, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1677,6 +1681,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 176946739}
     m_Modifications:
+    - target: {fileID: 684857375, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3492779048414450543, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1724,6 +1732,14 @@ PrefabInstance:
     - target: {fileID: 5965283145723313689, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_Name
       value: Low_Poly_Bone_Pile_(Downloadable)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965283145723313689, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334766258043241000, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
@@ -2456,6 +2472,10 @@ PrefabInstance:
       propertyPath: isNormal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1198661230, guid: eaf7d478e532b23409071c6c2640667a, type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 6143943796001400952}
     - target: {fileID: 405396501894954408, guid: eaf7d478e532b23409071c6c2640667a, type: 3}
       propertyPath: m_Name
       value: Ornate_Mirror
@@ -2898,6 +2918,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 176946739}
     m_Modifications:
+    - target: {fileID: 1006455826, guid: 0efd50248ec89dc45ae6991a36b9f622, type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 6143943796001400952}
     - target: {fileID: 4561587701509347483, guid: 0efd50248ec89dc45ae6991a36b9f622, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4978,11 +5002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587995926346700068, guid: 4ab23b2c0324a844690d5e7debee5338, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 186.56
+      value: 186.31
       objectReference: {fileID: 0}
     - target: {fileID: 8587995926346700068, guid: 4ab23b2c0324a844690d5e7debee5338, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 8587995926346700068, guid: 4ab23b2c0324a844690d5e7debee5338, type: 3}
       propertyPath: m_LocalPosition.z

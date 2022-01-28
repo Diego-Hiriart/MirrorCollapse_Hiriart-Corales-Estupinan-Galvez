@@ -10,6 +10,8 @@ public class MirrorPortal : MonoBehaviour
     [SerializeField] bool isBroken;
     [SerializeField] bool isNormal;
 
+    [SerializeField] LevelController levelController;
+
     // Start is called before the first frame update
     void Start()
     {

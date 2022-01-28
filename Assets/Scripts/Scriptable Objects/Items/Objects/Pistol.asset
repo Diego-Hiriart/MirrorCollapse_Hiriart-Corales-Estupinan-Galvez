@@ -16,7 +16,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 8857703096554319860, guid: 5e7b0e24c53a6134db1bc1644dd927f8, type: 3}
   type: 1
   itemName: Pistol
-  description: I got this gun as soon as I moved in this house. I hope iI won't ever
+  description: I got this gun as soon as I moved in this house. I hope I won't ever
     need it.
   atkDamage: 30
   isGun: 1
