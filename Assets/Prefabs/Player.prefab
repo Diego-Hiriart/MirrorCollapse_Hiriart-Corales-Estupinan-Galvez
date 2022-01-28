@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 0
-  speed: 30
-  sprintLimitTime: 3
+  speed: 6
+  sprintLimitTime: 7
   sprintMultiplier: 1.75
   gravity: -19.62
   jumpHeight: 3
@@ -394,7 +394,6 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
   bat: {fileID: 177529978758960955}
   pistol: {fileID: 7907616736097167693}
-  hud: {fileID: 2563875563581011742, guid: 2f122c21fc72f664ba34aa61b071bf03, type: 3}
   ammo: {fileID: 6374351443983110763}
 --- !u!1 &7190831291341379433
 GameObject:
