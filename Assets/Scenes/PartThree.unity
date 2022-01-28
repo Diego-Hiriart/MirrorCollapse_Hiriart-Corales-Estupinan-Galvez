@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657767, g: 0.4964127, b: 0.57481843, a: 1}
+  m_IndirectSpecularColor: {r: 0.446577, g: 0.49641138, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2260,13 +2260,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8566155750503561046, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 7496396093345501596}
     - target: {fileID: 8566155751373217106, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 8566155751373217107, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8566155751373217107, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2310,6 +2314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+--- !u!1 &735990764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 386319860, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+  m_PrefabInstance: {fileID: 735990763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &735990765 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8566155751373217104, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
@@ -4007,7 +4016,7 @@ Transform:
   - {fileID: 1630940184}
   - {fileID: 2053231618}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1120256518
 PrefabInstance:
@@ -5124,7 +5133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1395024546243889752, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: needsKey
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1395024547369481116, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: needsKey
@@ -5140,7 +5149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228661012180899431, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7228661012180899431, guid: fa440202295d0574aab1ef64363d75db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8564,7 +8573,7 @@ MonoBehaviour:
   hud: {fileID: 1104011165}
   effectsMixer: {fileID: 24100000, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
   musicMixer: {fileID: 24100000, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
-  endMenu: {fileID: 0}
+  endMenu: {fileID: 735990764}
 --- !u!1 &7496396093345501598
 GameObject:
   m_ObjectHideFlags: 0

@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 0
-  speed: 6
+  speed: 30
   sprintLimitTime: 3
   sprintMultiplier: 1.75
   gravity: -19.62
