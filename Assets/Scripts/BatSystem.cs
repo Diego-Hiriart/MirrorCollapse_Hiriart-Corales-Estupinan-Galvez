@@ -68,10 +68,8 @@ public class BatSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HIT1");
         if(other.tag == "Hitbox")
         {
-            Debug.Log("hit");
             other.gameObject.GetComponentInParent<EnemyController>().ChangeHealth(damage, false);
         }
     }

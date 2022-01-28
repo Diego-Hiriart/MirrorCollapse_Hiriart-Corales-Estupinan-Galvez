@@ -197,7 +197,7 @@ public class InventoryController : MonoBehaviour
         if(playerController.pistol.activeSelf)
         {
             InventorySlot itemToRemove = null;
-            Transform toBeDestroyed = null;
+            GameObject toBeDestroyed = null;
             foreach (var item in inventory.Container)
             {
                 if(item.item is AmmoObject)
@@ -205,22 +205,22 @@ public class InventoryController : MonoBehaviour
                     var ammo = item.item as AmmoObject;
 
                     weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = (item.amount * ammo.quantity).ToString("n0");
-                    if(ammo.quantity <= 0){      
+                    if(ammo.quantity <= 0){   
                         itemToRemove = item;                  
                         foreach(Transform child in itemsPanel.transform){
-                            if(child.name == "Gun Ammo"){
-                                toBeDestroyed = child;
+                            if(child.gameObject.name == "GunAmmo"){
+                                toBeDestroyed = child.gameObject;
                             }
                         }
                     }
                 }
-            }
-            if(!(toBeDestroyed is null)){
-                Destroy(toBeDestroyed);
-            }
+            }        
             if(!(itemToRemove is null)){
                 inventory.Container.Remove(itemToRemove);
             }
+            if(!(toBeDestroyed is null)){
+                Destroy(toBeDestroyed);
+            }           
         }
     }
 

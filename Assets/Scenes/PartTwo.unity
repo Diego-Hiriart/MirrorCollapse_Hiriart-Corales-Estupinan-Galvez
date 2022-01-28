@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657767, g: 0.4964127, b: 0.57481843, a: 1}
+  m_IndirectSpecularColor: {r: 0.446577, g: 0.49641138, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7415,6 +7415,10 @@ PrefabInstance:
     - target: {fileID: 2123744896, guid: c4374d285db077540a1a744ab3b10d6b, type: 3}
       propertyPath: itemID
       value: GunAmmo21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123744896, guid: c4374d285db077540a1a744ab3b10d6b, type: 3}
+      propertyPath: ammoQuantity
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6453496334681644288, guid: c4374d285db077540a1a744ab3b10d6b, type: 3}
       propertyPath: m_RootOrder

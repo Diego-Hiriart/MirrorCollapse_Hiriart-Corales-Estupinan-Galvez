@@ -52,12 +52,9 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeRedScreenAlpha(float health)
     {
-        Debug.Log(health);
-
         float value = 100 - health;
         value /= 100;
         value /= 4;
-        Debug.Log(value);
         redScreenImage.color = new Color(255, 0, 0, value);
     }
     
