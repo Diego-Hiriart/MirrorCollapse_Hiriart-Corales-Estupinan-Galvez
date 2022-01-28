@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853b7c70e469fe7479db7accdb5f3c80, type: 3}
+  m_Name: Dream clue
+  m_EditorClassIdentifier: 
+  id: 0
+  uiDisplay: {fileID: 5842134377795116400, guid: 14fd80e0ef490ac4781662abe1ee5b91, type: 3}
+  type: 3
+  itemName: ClueC
+  description: "This is definitely not a dream, it definitely looks like one, but
+    it doesn\u2019t feel like it. What\u2019s with the sun in here anyway? It\u2019s
+    red and not that bright. I really hope I\u2019m dreaming because I hate this.
+    I\u2019ll keep looking around to check if there\u2019s another one of those broken
+    mirrors that brought me here."

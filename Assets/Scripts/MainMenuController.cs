@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -27,10 +29,10 @@ public class MainMenuController : MonoBehaviour
     {
         LoadApplySettings();
         this.SetSettingsMenuState(false);
-        this.newGame.onClick.AddListener(delegate { CreateNewGame(); } );
-        this.loadGame.onClick.AddListener(delegate { ; });
-        this.settingsButton.onClick.AddListener(delegate { OpenSettings(); });
-        this.quitGame.onClick.AddListener(delegate { ; });
+        this.newGame.onClick.AddListener(CreateNewGame);
+        this.loadGame.onClick.AddListener(LoadLastGame);
+        this.settingsButton.onClick.AddListener(OpenSettings);
+        this.quitGame.onClick.AddListener(Quit);
     }
 
     // Start is called before the first frame update
@@ -51,9 +53,9 @@ public class MainMenuController : MonoBehaviour
         {
             AudioListener.volume = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey));
+            effectsMixer.SetFloat("Volume", PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey));
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
@@ -68,7 +70,21 @@ public class MainMenuController : MonoBehaviour
 
     private void CreateNewGame()
     {
-        SceneManager.LoadScene("PartOne");
+        PrefsKeys.newGame = true;
+        SceneManager.LoadScene("PartOne");      
+    }
+
+    public void LoadLastGame()
+    {
+        string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fs = File.Open(filePath, FileMode.Open);
+            SaveData save = (SaveData)bf.Deserialize(fs);
+            PrefsKeys.newGame = false;
+            SceneManager.LoadScene(save.GetLevel());
+        }
     }
 
     private void OpenSettings()

@@ -27,8 +27,8 @@ public class SettingsController : MonoBehaviour
         this.masterVolume.onValueChanged.AddListener(delegate { MasterVolume(); });
         this.effectsVolume.onValueChanged.AddListener(delegate { FXVolume(); });
         this.musicVolume.onValueChanged.AddListener(delegate { MusicVolume(); });
-        this.saveSettings.onClick.AddListener(delegate { SafePreferences(); });
-        this.closeButton.onClick.AddListener(delegate { CloseSettings(); });
+        this.saveSettings.onClick.AddListener(SafePreferences);
+        this.closeButton.onClick.AddListener(CloseSettings);
     }
 
     // Start is called before the first frame update
@@ -49,9 +49,9 @@ public class SettingsController : MonoBehaviour
         {
             this.masterVolume.value = PlayerPrefs.GetFloat(PrefsKeys.masterVolKey);         
         }
-        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolumeKey))
+        if (PlayerPrefs.HasKey(PrefsKeys.effectsVolKey))
         {
-            this.effectsVolume.value = PlayerPrefs.GetFloat(PrefsKeys.effectsVolumeKey);          
+            this.effectsVolume.value = PlayerPrefs.GetFloat(PrefsKeys.effectsVolKey);          
         }
         if (PlayerPrefs.HasKey(PrefsKeys.musicVolKey))
         {
@@ -77,7 +77,7 @@ public class SettingsController : MonoBehaviour
     private void SafePreferences()
     {
         PlayerPrefs.SetFloat(PrefsKeys.masterVolKey, masterVolume.value);
-        PlayerPrefs.SetFloat(PrefsKeys.effectsVolumeKey, effectsVolume.value);
+        PlayerPrefs.SetFloat(PrefsKeys.effectsVolKey, effectsVolume.value);
         PlayerPrefs.SetFloat(PrefsKeys.musicVolKey, musicVolume.value);
         PlayerPrefs.Save();
         this.gameObject.SetActive(false);
