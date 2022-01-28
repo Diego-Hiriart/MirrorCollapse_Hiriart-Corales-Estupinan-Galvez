@@ -71,7 +71,7 @@ public class MainMenuController : MonoBehaviour
     private void CreateNewGame()
     {
         PrefsKeys.newGame = true;
-        SceneManager.LoadScene("PartOne");      
+        SceneManager.LoadScene(1);
     }
 
     public void LoadLastGame()
@@ -83,6 +83,7 @@ public class MainMenuController : MonoBehaviour
             FileStream fs = File.Open(filePath, FileMode.Open);
             SaveData save = (SaveData)bf.Deserialize(fs);
             PrefsKeys.newGame = false;
+            fs.Close();
             SceneManager.LoadScene(save.GetLevel());
         }
     }

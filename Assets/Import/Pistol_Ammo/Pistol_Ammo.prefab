@@ -267,6 +267,7 @@ MonoBehaviour:
   itemObject: {fileID: 11400000, guid: d67d634fd5e49c94e84177dce665d3bd, type: 2}
   isPickable: 1
   isWeaponAmmo: 1
+  ammoQuantity: 15
   itemName: GunAmmo
   itemID: GunAmmo11
 --- !u!1 &7015532599443726136

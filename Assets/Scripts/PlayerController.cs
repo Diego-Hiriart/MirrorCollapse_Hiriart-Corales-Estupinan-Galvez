@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public InventoryObject inventory;
     [SerializeField] public GameObject bat;
     [SerializeField] public GameObject pistol;
-    [SerializeField] public GameObject hud;
 
     public GameObject ammo;
 
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        redScreenImage = hud.transform.GetChild(1).GetComponent<Image>();
+        redScreenImage = GameObject.FindWithTag("RedScreen").GetComponent<Image>();
         ChangeRedScreenAlpha(player.GetHealth());
     }
 
