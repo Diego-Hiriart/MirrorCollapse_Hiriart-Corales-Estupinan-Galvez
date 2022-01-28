@@ -27,6 +27,7 @@ public class LevelController : MonoBehaviour
     {
         if (!PrefsKeys.newGame)
         {
+            Debug.Log("aqui1");
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
         }
         else if(PrefsKeys.sceneChanged)
@@ -34,10 +35,13 @@ public class LevelController : MonoBehaviour
             // spawn player
             this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
             this.playerControl = this.player.GetComponent<PlayerController>();
+            Debug.Log("null "+playerControl);
             this.playerControl.GetPlayerInfo().SetInventory(PrefsKeys.inventory);
+            Debug.Log("null "+playerControl.GetPlayerInfo());
         }
-        else
+        else if(PrefsKeys.newGame)
         {
+            Debug.Log("aqui2");
             NewGame();
         }
     }
@@ -86,6 +90,8 @@ public class LevelController : MonoBehaviour
 
     private SaveData CreateSaveData()
     {
+        Debug.Log("playerinfo "+this.playerControl.GetPlayerInfo());
+        Debug.Log("inventory "+this.playerControl.GetPlayerInfo().GetInventory());
         return new SaveData(this.level, this.playerControl.GetPlayerInfo(), this.playerControl.GetPlayerInfo().GetInventory(), this.deadEnemies);
     }
 
