@@ -2792,6 +2792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+--- !u!1 &735990764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 386319860, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
+  m_PrefabInstance: {fileID: 735990763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &735990765 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8566155751373217104, guid: 01be8342f0660d14e887e47f28850f9e, type: 3}
@@ -8973,7 +8978,7 @@ MonoBehaviour:
   hud: {fileID: 1104011165}
   effectsMixer: {fileID: 24100000, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
   musicMixer: {fileID: 24100000, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
-  endMenu: {fileID: 0}
+  endMenu: {fileID: 735990764}
 --- !u!1 &7496396093345501598
 GameObject:
   m_ObjectHideFlags: 0
