@@ -1,0 +1,11 @@
+Model Information:
+* title:	Porch Light PBR (Free Download)
+* source:	https://sketchfab.com/3d-models/porch-light-pbr-free-download-944968fb15474439b2de10510a6f33c7
+* author:	Kless Gyzen (https://sketchfab.com/klessgyzen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Porch Light PBR (Free Download)" (https://sketchfab.com/3d-models/porch-light-pbr-free-download-944968fb15474439b2de10510a6f33c7) by Kless Gyzen (https://sketchfab.com/klessgyzen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -48,6 +48,7 @@ public class PauseController : MonoBehaviour
 
     private void QuitToMainMenu()
     {
+        PrefsKeys.sceneChanged = false;
         SceneManager.LoadScene("MainMenu");        
     }
 }

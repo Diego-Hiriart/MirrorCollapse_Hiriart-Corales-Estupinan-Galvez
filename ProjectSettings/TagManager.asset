@@ -6,6 +6,17 @@ TagManager:
   tags:
   - Lamp
   - Snack
+  - Door
+  - Switch
+  - Portal
+  - Inventory
+  - Key
+  - Enemy
+  - Ammo
+  - RedScreen
+  - EndMenu
+  - Hitbox
+  - Portals
   layers:
   - Default
   - TransparentFX
@@ -13,8 +24,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Bat
   - 
   - 
   - 

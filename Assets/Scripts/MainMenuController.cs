@@ -74,7 +74,7 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("PartOne");      
     }
 
-    private void LoadLastGame()
+    public void LoadLastGame()
     {
         string filePath = Application.persistentDataPath + PrefsKeys.saveFileFormat + ".data";
         if (File.Exists(filePath))
@@ -83,7 +83,7 @@ public class MainMenuController : MonoBehaviour
             FileStream fs = File.Open(filePath, FileMode.Open);
             SaveData save = (SaveData)bf.Deserialize(fs);
             PrefsKeys.newGame = false;
-            SceneManager.LoadScene(save.GetLevel());          
+            SceneManager.LoadScene(save.GetLevel());
         }
     }
 

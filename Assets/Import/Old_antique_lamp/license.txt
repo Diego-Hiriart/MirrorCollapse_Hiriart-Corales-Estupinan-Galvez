@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old antique lamp
+* source:	https://sketchfab.com/3d-models/old-antique-lamp-e197e929275e4f4e9574b9ced4c921a7
+* author:	Citflo (https://sketchfab.com/allegory.fake)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old antique lamp" (https://sketchfab.com/3d-models/old-antique-lamp-e197e929275e4f4e9574b9ced4c921a7) by Citflo (https://sketchfab.com/allegory.fake) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

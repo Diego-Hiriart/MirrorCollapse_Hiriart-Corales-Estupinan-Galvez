@@ -1,0 +1,11 @@
+Model Information:
+* title:	Candel
+* source:	https://sketchfab.com/3d-models/candel-f1e8cc5cf9584f7ea6c2570f66163275
+* author:	deniska40k (https://sketchfab.com/deniska40k)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Candel" (https://sketchfab.com/3d-models/candel-f1e8cc5cf9584f7ea6c2570f66163275) by deniska40k (https://sketchfab.com/deniska40k) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
