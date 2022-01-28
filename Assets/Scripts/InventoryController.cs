@@ -162,6 +162,7 @@ public class InventoryController : MonoBehaviour
                         if(weapon.isGun == true)
                         {
                             playerController.EquipWeapon(true);
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "-";
                         }
                         else
                         {

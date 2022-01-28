@@ -192,6 +192,7 @@ public class LevelController : MonoBehaviour
         {
             this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0,0,0,0));
         }
+        this.AddAmmoIfNeeded();
     }
 
     private void NewGame()
@@ -199,6 +200,7 @@ public class LevelController : MonoBehaviour
         ClearInventory();
         this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
         this.playerControl = this.player.GetComponent<PlayerController>();
+        this.AddAmmoIfNeeded();
     }
 
     public void AddToPlayerInventory(Item item)
@@ -214,5 +216,13 @@ public class LevelController : MonoBehaviour
     private void ClearInventory()
     {
         inventory.Container.Clear();
+    }
+
+    private void AddAmmoIfNeeded(){
+        if(this.playerControl.GetPlayerInfo().GetAmmoItem() is null){
+            Item emptyAmmo = new Item(true, "GunAmmo", true);
+            emptyAmmo.SetAmmoAmount(0);
+            this.playerControl.GetPlayerInfo().AddToInventory(emptyAmmo);
+        }
     }
 }
