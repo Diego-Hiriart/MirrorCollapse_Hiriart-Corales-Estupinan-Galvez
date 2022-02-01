@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
     bool isAttacking;
     [SerializeField] float atkDamage;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +24,7 @@ public class EnemyAttack : MonoBehaviour
         {
             isAttacking = true;
             player = other.gameObject;
+            
             StartCoroutine(DoAttack());
         }
     }
@@ -46,6 +48,4 @@ public class EnemyAttack : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
     }
-
-
 }
