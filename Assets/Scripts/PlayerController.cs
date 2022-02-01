@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject bat;
     [SerializeField] public GameObject pistol;
 
+    [SerializeField] AudioSource hurtAudio;
+
     public GameObject ammo;
 
     private PlayerCharacter player;
@@ -80,6 +82,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            hurtAudio.Play();
             this.player.SetHealth(this.player.GetHealth() - health > minHealth ? this.player.GetHealth() - health : minHealth);
         }
 
