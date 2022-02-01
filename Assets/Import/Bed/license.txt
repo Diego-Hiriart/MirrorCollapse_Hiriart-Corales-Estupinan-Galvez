@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bed
+* source:	https://sketchfab.com/3d-models/bed-fe5bc6a0b8524715955293fc51270ded
+* author:	Faen (https://sketchfab.com/Faen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bed" (https://sketchfab.com/3d-models/bed-fe5bc6a0b8524715955293fc51270ded) by Faen (https://sketchfab.com/Faen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

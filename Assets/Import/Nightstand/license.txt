@@ -1,0 +1,11 @@
+Model Information:
+* title:	Nightstand
+* source:	https://sketchfab.com/3d-models/nightstand-f6b42b83687d4a809bff6269d49ec9fd
+* author:	Ray (https://sketchfab.com/rayro)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Nightstand" (https://sketchfab.com/3d-models/nightstand-f6b42b83687d4a809bff6269d49ec9fd) by Ray (https://sketchfab.com/rayro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

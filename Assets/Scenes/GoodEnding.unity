@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9991b6265f7f87d43b7e3c676739f203, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.75384337, g: 0.69132495, b: 0.4142954, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3147,7 +3151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483164006721789228, guid: 3e31b0364d91ec742a699b1873bdcc58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 128.21835
+      value: 127.96835
       objectReference: {fileID: 0}
     - target: {fileID: 4483164006721789228, guid: 3e31b0364d91ec742a699b1873bdcc58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3155,7 +3159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483164006721789228, guid: 3e31b0364d91ec742a699b1873bdcc58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 120.55114
+      value: 86.80114
       objectReference: {fileID: 0}
     - target: {fileID: 4483164006721789228, guid: 3e31b0364d91ec742a699b1873bdcc58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4090,7 +4094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3492779048414450543, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 103.7
+      value: 140.6
       objectReference: {fileID: 0}
     - target: {fileID: 3492779048414450543, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4098,7 +4102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3492779048414450543, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 74.7
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3492779048414450543, guid: 7682948b1f755384aa4faf8472f414e1, type: 3}
       propertyPath: m_LocalRotation.w
