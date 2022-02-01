@@ -36,8 +36,12 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4337704449473817925, guid: ab4bab21575a09543954a23c671a434b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba2d9c113727ead40b3f7281b5c2e464, type: 3}
+    - target: {fileID: 4337704449473817925, guid: ab4bab21575a09543954a23c671a434b, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4337704449473817925, guid: ab4bab21575a09543954a23c671a434b, type: 3}
       propertyPath: m_Color.g
@@ -45,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4337704449473817925, guid: ab4bab21575a09543954a23c671a434b, type: 3}
       propertyPath: m_Color.r
-      value: 0.40005064
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9189127902571527954, guid: ab4bab21575a09543954a23c671a434b, type: 3}
       propertyPath: m_Name
