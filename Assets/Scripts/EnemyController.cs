@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     {
         if(enemyAgent != null && player != null && isChasing )
         {
-            enemyAgent.SetDestination(player.transform.position);         
+            enemyAgent.SetDestination(player.transform.position);
         }
     }
 
@@ -99,6 +99,7 @@ public class EnemyController : MonoBehaviour
         {
             isChasing = false;
             player = null;
+            enemyAgent.SetDestination(transform.position);
         }
     }
 
