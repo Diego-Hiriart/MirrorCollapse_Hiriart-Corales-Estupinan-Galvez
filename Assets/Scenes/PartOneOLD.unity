@@ -310,14 +310,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4557c14a0f93c3045876596b46884f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsButton: {fileID: 1494188620679761110}
-  weaponsButton: {fileID: 1494188619876565431}
-  recoveryButton: {fileID: 1494188621116266192}
-  titlePanel: {fileID: 1494188619545825866}
+  useEquipButton: {fileID: 0}
+  exitButton: {fileID: 0}
   itemsPanel: {fileID: 1494188619660069579}
   descriptionPanel: {fileID: 1494188619876197239}
   weaponPanel: {fileID: 5198153872598131627}
   healthPanel: {fileID: 1494188620647552688}
+  inventory: {fileID: 0}
+  gameController: {fileID: 0}
+  endMenu: {fileID: 0}
 --- !u!1 &236748020
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 236748020}
   inventory: {fileID: 2670549159555956514}
+  endMenu: {fileID: 0}
 --- !u!1 &1100616216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,8 +1225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbc92b91a9355c4ea605a7092baee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemObject: {fileID: 0}
   isPickable: 1
   isWeaponAmmo: 0
+  ammoQuantity: 15
   itemName: Donut
   itemID: Donut12
 --- !u!65 &1162694861
@@ -1294,6 +1298,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3156958310560150543, guid: 9df1c4b9c37add84fae57941b767093a, type: 3}
   m_PrefabInstance: {fileID: 3156958309324950461}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1278990726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278990727}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1278990727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278990726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.56, y: 3.98, z: -29.929264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1283570624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1607,9 +1641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 1002185266}
   hud: {fileID: 112080231}
-  player: {fileID: 0}
   effectsMixer: {fileID: 24100000, guid: 86bfd66ef006b4a43be3ca3bf7940901, type: 2}
   musicMixer: {fileID: 24100000, guid: 5d7b6142f3474b5439ba696e0af33bc6, type: 2}
+  endMenu: {fileID: 0}
 --- !u!1 &1491054270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,9 +1945,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d845f6fa531f17541b0c4ced857c9029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 92a86db9c8557b74a9e33dc0a9dbff4f, type: 2}
+  inventory2: {fileID: 11400000, guid: 024f3347c1e3a324693398f09dd4f639, type: 2}
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
-  level: PartOne
-  levelStartPosition: {x: 0, y: 0, z: 0}
+  level: PartOneOld
+  levelStartPosition: {x: -22.56, y: 3.98, z: -29.929264}
+  gameControl: {fileID: 0}
 --- !u!1 &1617975196
 GameObject:
   m_ObjectHideFlags: 0

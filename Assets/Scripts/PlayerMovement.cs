@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
 
+    [SerializeField] AudioSource stepsAudio;
+    [SerializeField] AudioSource sprintAudio;
+
     [SerializeField] bool canJump = false;
 
     [SerializeField] float speed = 6f;
@@ -30,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    bool playStepAudio = false;
+    bool playSprintAudio = false;
+
+    int countStep = 0;
+    int countSprint = 0;
     
     void Start() 
     {
@@ -40,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
         transform.tag = "Player";
         originalCenter = controller.center;
         originalHeight = controller.height;
+
+        stepsAudio.loop = true;
+        sprintAudio.loop = true;
     }
 
     void Update()
@@ -64,6 +76,28 @@ public class PlayerMovement : MonoBehaviour
         // Get the input of each axis
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        if((x != 0 || z != 0) && (!isCrouching || !isSprinting))
+        {
+            playStepAudio = true;
+        }
+        else
+        {
+            stepsAudio.Stop();
+            playStepAudio = false;
+            countStep = 0;
+        }
+
+        if(countStep < 1 && playStepAudio)
+        {
+            stepsAudio.Play();
+            countStep++;
+        }
+
+        if(playSprintAudio)
+        {
+            countStep = 0;
+        }
 
         // Perform the movement to the right direction
         Vector3 move = transform.right * x + transform.forward * z;
@@ -138,6 +172,8 @@ public class PlayerMovement : MonoBehaviour
         {
             speed *= sprintMultiplier;
             isSprinting = true;
+            playSprintAudio = true;
+            playStepAudio = false;
         }
 
         // When the key is no longer pressed or the sprintTime reached the limit, change the
@@ -146,6 +182,20 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = originalSpeed;
             isSprinting = false;
+            playSprintAudio = false;
+            sprintAudio.Stop();
+            countSprint = 0;
+        }
+
+        if(countSprint < 1 && playSprintAudio)
+        {
+            if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                sprintAudio.Play();
+                countSprint++;
+                stepsAudio.Stop();
+                Debug.Log("c");
+            }
         }
 
         // If the player is not sprinting, then continously substract seconds to the
