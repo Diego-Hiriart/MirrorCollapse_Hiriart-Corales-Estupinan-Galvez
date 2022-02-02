@@ -1,0 +1,11 @@
+Model Information:
+* title:	High-end bathtub
+* source:	https://sketchfab.com/3d-models/high-end-bathtub-a0f2a58ef4484ea1bbd6d2ddad0a0979
+* author:	mr.pinkish (https://sketchfab.com/mr.pinkish)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "High-end bathtub" (https://sketchfab.com/3d-models/high-end-bathtub-a0f2a58ef4484ea1bbd6d2ddad0a0979) by mr.pinkish (https://sketchfab.com/mr.pinkish) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
