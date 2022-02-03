@@ -36,6 +36,15 @@ public class Credits : MonoBehaviour
 
             var text = creditsUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             text.color = new Color(255, 255, 255, opacity);
+
+            text = creditsUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            text.color = new Color(255, 255, 255, opacity);
+
+            text = creditsUI.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            text.color = new Color(255, 255, 255, opacity);
+
+            text = creditsUI.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+            text.color = new Color(255, 255, 255, opacity);
         }
     }
 
