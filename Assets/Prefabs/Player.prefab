@@ -629,7 +629,7 @@ MonoBehaviour:
   stepsAudio: {fileID: 9123658520869095405}
   sprintAudio: {fileID: 4738151574240434225}
   canJump: 0
-  speed: 25
+  speed: 6
   sprintLimitTime: 7
   sprintMultiplier: 1.75
   gravity: -19.62
