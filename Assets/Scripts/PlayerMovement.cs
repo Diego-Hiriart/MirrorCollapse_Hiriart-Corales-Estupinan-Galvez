@@ -194,7 +194,7 @@ public class PlayerMovement : MonoBehaviour
                 sprintAudio.Play();
                 countSprint++;
                 stepsAudio.Stop();
-                Debug.Log("c");
+                //Debug.Log("c");
             }
         }
 

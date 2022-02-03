@@ -14,7 +14,12 @@ public class DoorInteractable : MonoBehaviour
 
     [SerializeField] InventoryObject inventory;
 
+    [SerializeField] AudioSource openAudio;
+    [SerializeField] AudioSource lockedAudio;
+
     Animator animator;
+
+    bool playSound = false;
 
     void Awake()
     {
@@ -39,18 +44,41 @@ public class DoorInteractable : MonoBehaviour
                 if(item.item.itemName == "CursedKey" && westDoor)
                 {
                     animator.SetTrigger("OpenCloseDoor");
-
+                    openAudio.Play();
+                    playSound = false;
+                    Debug.Log("A");
+                    break;
                 }
-                
-                if(item.item.itemName == "StrangeKey" && eastDoor)
+                else if(item.item.itemName == "StrangeKey" && eastDoor)
                 {
                     animator.SetTrigger("OpenCloseDoor");
+                    openAudio.Play();
+                    playSound = false;
+                    Debug.Log("B");
+                    break;
                 }
+                else
+                {
+                    playSound = true;
+                }
+            }
+
+            if(inventory.Container.Count == 0)
+            {
+                playSound = true;
+            }
+
+            if(playSound)
+            {
+                lockedAudio.Play();
+                Debug.Log("C");
             }
         }
         else
         {
             animator.SetTrigger("OpenCloseDoor");
+            openAudio.Play();
+            Debug.Log("D");
         }
     }
 }

@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour
             this.enemy.SetHealth(this.enemy.GetHealth() - health > 0 ? this.enemy.GetHealth() - health : 0);
         }
 
-        Debug.Log(this.enemy.GetHealth());
+        //Debug.Log(this.enemy.GetHealth());
 
         if (this.enemy.GetHealth() <= 0)
         {
