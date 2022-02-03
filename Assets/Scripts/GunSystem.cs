@@ -7,6 +7,8 @@ public class GunSystem : MonoBehaviour
     [SerializeField] InventoryObject inventory;
     [SerializeField] AudioSource shotAudio;
 
+    Animator animator;
+
     //Gun stats
     private float damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
@@ -31,6 +33,12 @@ public class GunSystem : MonoBehaviour
         damage = weaponObject.atkDamage;
         CheckBullets();
     }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if(Time.timeScale == 1)
@@ -79,6 +87,7 @@ public class GunSystem : MonoBehaviour
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
         shotAudio.Play();
+        animator.SetTrigger("Shoot");
 
         //RayCast
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy))

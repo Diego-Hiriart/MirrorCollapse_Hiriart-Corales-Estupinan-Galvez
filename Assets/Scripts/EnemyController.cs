@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool isBoss;
     [SerializeField] bool hasClue;
     [SerializeField] GameObject clue;
+
+    [SerializeField] AudioSource attackAudio;
     
     bool isChasing;
 
@@ -40,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         if(enemyAgent != null && player != null && isChasing )
         {
-            enemyAgent.SetDestination(player.transform.position);         
+            enemyAgent.SetDestination(player.transform.position);
         }
     }
 
@@ -55,7 +57,7 @@ public class EnemyController : MonoBehaviour
             this.enemy.SetHealth(this.enemy.GetHealth() - health > 0 ? this.enemy.GetHealth() - health : 0);
         }
 
-        Debug.Log(this.enemy.GetHealth());
+        //Debug.Log(this.enemy.GetHealth());
 
         if (this.enemy.GetHealth() <= 0)
         {
@@ -90,6 +92,8 @@ public class EnemyController : MonoBehaviour
         {
             isChasing = true;
             player = other.gameObject;
+
+            attackAudio.Play();
         }
     }
 
@@ -99,6 +103,9 @@ public class EnemyController : MonoBehaviour
         {
             isChasing = false;
             player = null;
+            enemyAgent.SetDestination(transform.position);
+
+            attackAudio.Stop();
         }
     }
 
