@@ -29,7 +29,7 @@ public class MirrorPortal : MonoBehaviour
         PrefsKeys.sceneChanged = true;
         
         if(SceneManager.GetActiveScene().buildIndex == 1)
-        {
+        {           
             SceneManager.LoadScene(2);
         }
         else if(SceneManager.GetActiveScene().buildIndex == 2 && isSecond)
