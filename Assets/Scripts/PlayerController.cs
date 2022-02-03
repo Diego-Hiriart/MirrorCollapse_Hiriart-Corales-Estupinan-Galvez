@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
             else if(impact.collider.tag == "Portal")
             {
                 PrefsKeys.inventory = this.player.GetInventory();
+                PrefsKeys.interLevelHealth = this.player.GetHealth();
                 impact.transform.GetComponentInParent<MirrorPortal>().ChangeLevel();
             }
         }

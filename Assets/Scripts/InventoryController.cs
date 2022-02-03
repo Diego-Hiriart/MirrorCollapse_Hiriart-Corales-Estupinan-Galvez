@@ -167,10 +167,10 @@ public class InventoryController : MonoBehaviour
                         else
                         {
                             playerController.EquipWeapon(false);
-                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "∞";
+                            weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "-";
                         }
 
-                        weaponPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.itemName;
+                        weaponPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.name;
                     }
                     else if(item.item is AmmoObject)
                     {
@@ -194,10 +194,10 @@ public class InventoryController : MonoBehaviour
 
     public void HandleBullets()
     {
+        InventorySlot itemToRemove = null;
+        GameObject toBeDestroyed = null;
         if(playerController.pistol.activeSelf)
-        {
-            InventorySlot itemToRemove = null;
-            GameObject toBeDestroyed = null;
+        {            
             foreach (var item in inventory.Container)
             {
                 if(item.item is AmmoObject)
@@ -221,6 +221,30 @@ public class InventoryController : MonoBehaviour
             if(!(toBeDestroyed is null)){
                 Destroy(toBeDestroyed);
             }           
+        }else{
+            foreach (var item in inventory.Container)
+            {
+                if(item.item is AmmoObject)
+                {
+                    var ammo = item.item as AmmoObject;
+
+                    weaponPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "-";
+                    if(ammo.quantity <= 0){   
+                        itemToRemove = item;                  
+                        foreach(Transform child in itemsPanel.transform){
+                            if(child.gameObject.name == "GunAmmo"){
+                                toBeDestroyed = child.gameObject;
+                            }
+                        }
+                    }
+                }
+            }        
+            if(!(itemToRemove is null)){
+                inventory.Container.Remove(itemToRemove);
+            }
+            if(!(toBeDestroyed is null)){
+                Destroy(toBeDestroyed);
+            }     
         }
     }
 
