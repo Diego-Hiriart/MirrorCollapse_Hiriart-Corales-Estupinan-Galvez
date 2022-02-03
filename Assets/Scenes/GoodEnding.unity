@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.75384337, g: 0.69132495, b: 0.4142954, a: 1}
+  m_IndirectSpecularColor: {r: 0.75392115, g: 0.6914075, b: 0.41410613, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5761,7 +5761,7 @@ MonoBehaviour:
   inventory2: {fileID: 11400000, guid: 024f3347c1e3a324693398f09dd4f639, type: 2}
   playerPrefab: {fileID: 7190831291143750403, guid: 982492eb05ba5074090802d9dd59ab32, type: 3}
   level: GoodEnding
-  levelStartPosition: {x: 27.643854, y: 1.8299997, z: 101.05646}
+  levelStartPosition: {x: 27.643854, y: 1.86, z: 101.05646}
   gameControl: {fileID: 7496396093345501596}
 --- !u!4 &6143943796001400953
 Transform:

@@ -22,9 +22,9 @@ public class LevelController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        if (!PrefsKeys.newGame)
+        if (!PrefsKeys.newGame && !PrefsKeys.sceneChanged)
         {
             LoadGame();//Try to load the game, since this scene might have been loaded by the main menu
         }
@@ -34,6 +34,8 @@ public class LevelController : MonoBehaviour
             this.player = Instantiate(playerPrefab, levelStartPosition, new Quaternion(0, 0, 0, 0));
             this.playerControl = this.player.GetComponent<PlayerController>();
             this.playerControl.GetPlayerInfo().SetInventory(PrefsKeys.inventory);
+            this.playerControl.GetPlayerInfo().SetHealth(PrefsKeys.interLevelHealth);
+            PrefsKeys.sceneChanged = false;
         }
         else if(PrefsKeys.newGame)
         {
@@ -102,7 +104,7 @@ public class LevelController : MonoBehaviour
             foreach (ItemController levelItem in this.levelItems)
             {
                 foreach (Item playerItem in save.GetPlayerInventory())
-                {
+                {                 
                     foreach (string id in playerItem.GetIds())
                     {
                         if (levelItem.GetItemID().Equals(id))
@@ -121,7 +123,7 @@ public class LevelController : MonoBehaviour
             foreach (EnemyController levelEnemy in this.levelEnemies)
             {
                 foreach (Enemy playerEnemy in save.GetPlayerDefeatedEnemies())
-                {
+                {                    
                     foreach (string id in playerEnemy.GetIds())
                     {
                         if (levelEnemy.GetEnemyID().Equals(id))
@@ -177,6 +179,7 @@ public class LevelController : MonoBehaviour
 
             this.playerControl.GetPlayerInfo().SetHealth(save.GetPlayer().GetHealth());
             fs.Close();//Close file
+            PrefsKeys.newGame = false;
         }
         else
         {
