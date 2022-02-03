@@ -1,13 +1,90 @@
-Salon: https://3dwarehouse.sketchup.com/model/37f70a1cac42cf3789c77216f51a69d3/salon-antiguo
-
-Cama: https://3dwarehouse.sketchup.com/model/aea23557-a5a8-4b66-8138-026d738ea7bf/Cama-antigua
-
-Armario: https://3dwarehouse.sketchup.com/model/1f1594dd73cb178375bb0ac424a52eb2/armario-grande
-
-Platos y vasos: https://3dwarehouse.sketchup.com/model/u850e7784-38e4-4b94-bff7-d41553521f37/PLATO
-
-Comedor: https://3dwarehouse.sketchup.com/model/c69afc923992f40af58ee08f4f4e05c2/Comedor-Completo
-
 OUIJA: https://3dwarehouse.sketchup.com/model/e6828c749b8468f944749da7fee2675/OUIJA
 
-Espejo: https://sketchfab.com/3d-models/dusty-antique-mirror-free-78ac8daa3393405792de9c71218ce88d
+Espejo 1: https://sketchfab.com/3d-models/dusty-antique-mirror-free-78ac8daa3393405792de9c71218ce88d
+
+Espejo 2: https://sketchfab.com/3d-models/ornate-mirror-68a8a9f27f6f4fb3b9d568bbb5db1086
+
+Espejo 3: https://sketchfab.com/3d-models/broken-mirror-5542db6ae060468f8f8525842546aec7
+
+Velas: https://sketchfab.com/3d-models/candle-light-d9d5ed5de83b4d899ab93f55bdc3d0bc
+
+Llave 1: https://sketchfab.com/3d-models/door-key-834f4e75590d432f96bc97be5065f6f6
+
+Llave 2: https://sketchfab.com/3d-models/old-key-d846b203f4754ee3825e8c4c76d21b21
+
+Cama: https://sketchfab.com/3d-models/bed-5dbfe3c5798445a5bdff4efca0b943a2
+
+Inodoro: https://sketchfab.com/3d-models/toilet-8a54852e97eb4b7fb9d8484d16fa9b50
+
+Mesa 1: https://sketchfab.com/3d-models/tv-table-7f9a58f9407b44c38f361700cb576384
+
+Mesa 2: https://sketchfab.com/3d-models/rustic-table-7edc6e42e323477fbee2511aa3cccf8d
+
+Lavamanos: https://sketchfab.com/3d-models/sink-with-faucet-e7c2bddaebe94dd0a28fd89981de5195
+
+Ruinas 1: https://sketchfab.com/3d-models/ruins-on-the-top-of-a-hill-0295f0ad1ff94a44aa57db03b34e2966
+
+Ruinas 2: https://sketchfab.com/3d-models/low-poly-column-debris-6d6b2692864142689d543416e6457264
+
+Huesos: https://sketchfab.com/3d-models/low-poly-bone-pile-downloadable-5ec580b41a934cea86d4297980d1378f
+
+Medkit: https://sketchfab.com/3d-models/medkit-5a5af0a596be479f9ec4d0f27aafa6bc
+
+Switch luz: https://sketchfab.com/3d-models/light-switch-808c3de4dd874fc1b67ff15cd2645555
+
+Bate: https://sketchfab.com/3d-models/horny-bonker-5000-baseball-bat-937bf27e33214224a7fb9cac7fe23061
+
+Bañera: https://sketchfab.com/3d-models/high-end-bathtub-a0f2a58ef4484ea1bbd6d2ddad0a0979
+
+Vestidor: https://sketchfab.com/3d-models/dresser-a4b80983355d40cdae20eec3f49ec80f
+
+Papel: https://sketchfab.com/3d-models/paper-a8ed9eeea88842469b5dade54cd8eb6b
+
+Mesa de noche: https://sketchfab.com/3d-models/nightstand-f6b42b83687d4a809bff6269d49ec9fd
+
+Lampara: https://sketchfab.com/3d-models/old-antique-lamp-e197e929275e4f4e9574b9ced4c921a7
+
+Municion: https://sketchfab.com/3d-models/pistol-ammo-3800dc18d98b459281b8720defa9a5cb
+
+Pistola: https://sketchfab.com/3d-models/pindad-p3a-1cd1be5b738f410484aec40bd85c7fb8
+
+Enemigo 1: https://sketchfab.com/3d-models/iron-spectre-b57a8ecb11e44dc18d82685597558dc8
+
+Enemigo 2: https://sketchfab.com/3d-models/phantom-1-d600f5b353094aa2a53b6de63a4c0040
+
+Pintura: https://sketchfab.com/3d-models/square-picture-frame-white-0131c91ce3184f639bdd56bcb82803c3
+
+Vallas de madera: https://sketchfab.com/3d-models/old-fence-3a98eabc0aa9475db5fcf7fab235751b
+
+Vallas de metal: https://sketchfab.com/3d-models/bar-fence-a5863714fcbe4343842d76c2bba21f62
+
+Puertas: https://sketchfab.com/3d-models/wooden-door-8726b6c219a54ed585e096f267c2a35e
+
+Casa: https://sketchfab.com/3d-models/single-story-house-textured-with-interior-62c6fecff4ee4e24abb4080ff533e707
+
+Textura de madera: https://www.poliigon.com/texture/wood-planks-worn-33
+
+Skyboxes: https://assetstore.unity.com/packages/2d/textures-materials/sky/10-skyboxes-pack-day-night-32236
+
+------------------
+SONIDOS Y EFECTOS
+
+Gun shot: https://www.youtube.com/watch?v=f53fti1kwgc
+
+Background 1: https://www.youtube.com/watch?v=vl9hCXGNp20
+
+Background 2: https://www.youtube.com/watch?v=1R303JfHLY4
+
+Background 3: https://www.youtube.com/watch?v=5qkautcNkAU
+
+Enemigos: https://www.youtube.com/watch?v=-GPuzjwbkdM
+
+Bate: https://www.youtube.com/watch?v=LTSyAYH8Ixo
+
+Herido: https://www.youtube.com/watch?v=8ln1Bj5HyKY
+
+Pasos: https://www.youtube.com/watch?v=vX8sbqk007Q
+
+Puerta Abrir Cerrar: https://www.youtube.com/watch?v=rKLCEzF1XGo
+
+Puerta cerrada: https://www.youtube.com/watch?v=92YfzPu3Ukc
