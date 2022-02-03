@@ -46,7 +46,6 @@ public class DoorInteractable : MonoBehaviour
                     animator.SetTrigger("OpenCloseDoor");
                     openAudio.Play();
                     playSound = false;
-                    Debug.Log("A");
                     break;
                 }
                 else if(item.item.itemName == "StrangeKey" && eastDoor)
@@ -54,7 +53,6 @@ public class DoorInteractable : MonoBehaviour
                     animator.SetTrigger("OpenCloseDoor");
                     openAudio.Play();
                     playSound = false;
-                    Debug.Log("B");
                     break;
                 }
                 else
@@ -71,14 +69,12 @@ public class DoorInteractable : MonoBehaviour
             if(playSound)
             {
                 lockedAudio.Play();
-                Debug.Log("C");
             }
         }
         else
         {
             animator.SetTrigger("OpenCloseDoor");
             openAudio.Play();
-            Debug.Log("D");
         }
     }
 }

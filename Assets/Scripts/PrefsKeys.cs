@@ -14,4 +14,6 @@ public static class PrefsKeys
     public static bool newGame = true;
 
     public static ItemList inventory = new ItemList(); //Inventory between levels
+    public static float interLevelHealth = 0;//Health between levels
+    
 }
