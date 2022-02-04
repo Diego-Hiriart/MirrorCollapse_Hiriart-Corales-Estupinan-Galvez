@@ -9,6 +9,8 @@ public class Credits : MonoBehaviour
 {
     [SerializeField] GameObject creditsUI;
     [SerializeField] LevelController levelController;
+    [SerializeField]
+    private GameController gameControl;
     bool rollCredits;
     float opacity = 0;
 
@@ -29,7 +31,7 @@ public class Credits : MonoBehaviour
     void Update()
     {
         if(rollCredits)
-        {
+        {          
             opacity += 0.01f;
             var bg = creditsUI.transform.GetChild(0).GetComponent<Image>();
             bg.color = new Color(0, 0, 0, opacity);
@@ -53,7 +55,9 @@ public class Credits : MonoBehaviour
         yield return new WaitForSeconds(15f);
 
         Cursor.lockState = CursorLockMode.None;
-
+        this.gameControl.CutsceneCreditsPlaying(false);
+        this.gameControl.gameObject.SetActive(true);
+       
         SceneManager.LoadScene(0);
     }
 
@@ -61,6 +65,9 @@ public class Credits : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         rollCredits = true;
+
+        this.gameControl.CutsceneCreditsPlaying(true);
+        this.gameControl.gameObject.SetActive(false);
 
         yield return ShowCredits();
     }

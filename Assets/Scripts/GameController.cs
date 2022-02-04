@@ -24,7 +24,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        this.gameObject.SetActive(true);
+        Time.timeScale = 1;        
     }
 
     // Update is called once per frame
@@ -128,5 +129,12 @@ public class GameController : MonoBehaviour
         //Show message for 3 seconds
         yield return new WaitForSeconds(3f);
         this.hud.GetComponent<HUDController>().ActivateDeactivateSaveNotificaction(false);
+    }
+
+    public void CutsceneCreditsPlaying(bool status){
+        this.UI.gameObject.SetActive(!status);
+        this.hud.gameObject.SetActive(!status);
+        this.player.gameObject.GetComponent<PlayerMovement>().enabled = !status;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>().enabled = !status;
     }
 }

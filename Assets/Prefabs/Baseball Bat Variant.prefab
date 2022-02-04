@@ -40,11 +40,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488847495262947790, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
       propertyPath: m_Name
-      value: Baseball Bat
+      value: Baseball Bat Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488847495262947790, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1488847495262947790, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501614386284631590, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762805631344877619, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587499406170652920, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7051824037981491531, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68,6 +84,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051824037981491531, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659919469271042141, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983992356690105975, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
@@ -112,6 +132,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8983992356690105975, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005997418796622576, guid: f1e032d9993ed664386308ba1271bb95, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

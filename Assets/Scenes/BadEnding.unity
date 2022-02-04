@@ -8220,6 +8220,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569710500423346555, guid: ce67911d467c99b409f7268ed4ec591a, type: 3}
+      propertyPath: gameControl
+      value: 
+      objectReference: {fileID: 7496396093345501596}
+    - target: {fileID: 4569710500423346555, guid: ce67911d467c99b409f7268ed4ec591a, type: 3}
       propertyPath: levelController
       value: 
       objectReference: {fileID: 6143943796001400952}
