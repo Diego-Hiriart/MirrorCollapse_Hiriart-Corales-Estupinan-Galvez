@@ -113,4 +113,19 @@ public class EnemyController : MonoBehaviour
     {
         return this.enemyID;
     }
+
+    void OnDestroy(){
+        if(isBoss){
+            var portals = GameObject.FindWithTag("Portals");
+            
+            foreach(Transform child in portals.transform)
+            {
+                child.gameObject.SetActive(true);
+            } 
+            if(hasClue)
+            {
+                clue.SetActive(true);
+            }
+        }        
+    }
 }
