@@ -1,2 +1,2 @@
 # MirrorCollapse_Hiriart-Corales-Estupinan-Galvez
-Videojuego "Mirror Collapse" - Proyecto Final de Programación V
+"Mirror Collapse" Videojuego  - Final Project for the Programming V course
